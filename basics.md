@@ -268,6 +268,215 @@ hello.cpp
    |
 [Linker] --> hello (Executable)
 ```
+
+---
+
+#1. What is a Library?
+
+A **library** is a collection of compiled code (functions, classes, resources) that can be reused by multiple programs.
+
+In C/C++ there are **two types:**
+
+| Type                | File Extension (Windows)         | Linked At                    |
+| ------------------- | -------------------------------- | ---------------------------- |
+| **Static Library**  | `.lib` (Windows) / `.a` (Linux)  | Compile/Link time            |
+| **Dynamic Library** | `.dll` (Windows) / `.so` (Linux) | Runtime (loaded dynamically) |
+
+---
+
+#2. Static Linking (Static Library)
+
+### What happens?
+
+When you compile a program using a static library, the compiler **copies** the required functions from the library directly into the final `.exe`.
+
+---
+
+### Process Flow
+
+```
+library code (.cpp) ---> library (.lib/.a)
+source code (.cpp)  ---\
+                         ---> linker ---> Final .exe (contains library code)
+```
+
+---
+
+### Example: Creating Static Library
+
+#### `math.cpp` → compile to `.lib`
+
+```cpp
+int Add(int a, int b) {
+    return a + b;
+}
+```
+
+Compile (Windows):
+
+```
+g++ -c math.cpp
+ar rcs math.lib math.o
+```
+
+#### Use in program:
+
+```cpp
+#include <iostream>
+extern int Add(int, int);
+
+int main() {
+    std::cout << Add(10, 20);
+}
+```
+
+Link:
+
+```
+g++ main.cpp math.lib -o app.exe
+```
+
+---
+
+### Pros of Static Library
+
+| Benefit              | Reason                                              |
+| -------------------- | --------------------------------------------------- |
+| Faster runtime       | No dynamic loading or lookup.                       |
+| No dependency issues | `.exe` contains all code.                           |
+| Stability            | No external updates changing behavior unexpectedly. |
+
+---
+
+###  Cons
+
+| Drawback          | Reason                                                   |
+| ----------------- | -------------------------------------------------------- |
+| Larger executable | Code is copied inside `.exe`.                            |
+| Harder updates    | Must rebuild and redistribute `.exe` if library changes. |
+| Memory waste      | Multiple running apps each have their own library copy.  |
+
+---
+
+#3. Dynamic Linking (Dynamic Link Library - DLL)
+
+### What happens?
+
+In dynamic linking, the final executable **does NOT contain the library code**.
+Instead, it stores **only references**, and the library is loaded **at runtime**.
+
+---
+
+### There are **two types of dynamic linking:**
+
+| Linking Type         | Mechanism                                 | Example                            |
+| -------------------- | ----------------------------------------- | ---------------------------------- |
+| **Implicit Linking** | Linker uses import library (`*.lib`)      | `#pragma comment(lib, "Math.lib")` |
+| **Explicit Linking** | Load at runtime using API (`LoadLibrary`) | Used in plugin/driver systems      |
+
+---
+
+### Process Flow (Implicit)
+
+```
+library code (.cpp) ---> Math.dll + Math.lib
+source code (.cpp)  ---\ 
+                         ---> linker (uses .lib) ---> Final .exe (does NOT contain code)
+                                                      |
+                                                      |---> loads Math.dll at runtime
+```
+
+---
+
+### Example: Creating DLL
+
+#### `mathdll.cpp`
+
+```cpp
+#define EXPORT __declspec(dllexport)
+
+extern "C" EXPORT int Add(int a, int b) {
+    return a + b;
+}
+```
+
+Compile:
+
+```
+g++ -shared mathdll.cpp -o Math.dll
+```
+
+#### Using DLL (Implicit)
+
+```cpp
+#include <iostream>
+#pragma comment(lib, "Math.lib")
+
+extern "C" int Add(int, int);
+
+int main() {
+    std::cout << Add(4, 5);
+}
+```
+
+---
+
+### Pros of DLL (Dynamic Library)
+
+| Benefit            | Why                                                          |
+| ------------------ | ------------------------------------------------------------ |
+| Smaller executable | Code stays in DLL, not copied into EXE                       |
+| Easy updates       | Replace DLL without recompiling the program                  |
+| Memory sharing     | Only **one DLL** loaded in memory even if 50 programs use it |
+| Supports plugins   | Applications load modules at runtime                         |
+
+---
+
+### Cons
+
+| Drawback                | Why                                          |
+| ----------------------- | -------------------------------------------- |
+| “DLL Hell”              | Missing/wrong version → runtime error        |
+| Slight runtime overhead | Function lookup and symbol resolution        |
+| Security risk           | User can inject modified DLL (DLL Hijacking) |
+
+---
+
+# Internal Working Differences
+
+| Feature            | Static Linking                  | Dynamic Linking           |
+| ------------------ | ------------------------------- | ------------------------- |
+| Code copy          | Copied into exe                 | Stored in DLL file        |
+| Address resolution | Compile time                    | Runtime via loader        |
+| Relocation         | Done once while creating `.exe` | Done every time DLL loads |
+| Memory sharing     | ❌ No                            | ✅ Yes (shared CS section) |
+| Updates            | Requires recompiling app        | DLL can be swapped        |
+
+---
+
+# When Should You Use Which?
+
+| Use Case                                                         | Best Option |
+| ---------------------------------------------------------------- | ----------- |
+| Embedded systems, no external files allowed                      | Static      |
+| Performance-critical at startup                                  | Static      |
+| Plugin-based system (browser, game engines)                      | Dynamic     |
+| Modular application where updates are frequent                   | Dynamic     |
+| Multiple apps sharing common code (DB drivers, graphics engines) | Dynamic     |
+
+---
+
+# Summary Table
+
+| Feature            | Static Library          | Dynamic Library (DLL)   |
+| ------------------ | ----------------------- | ----------------------- |
+| Linking Time       | Compile/Link time       | Runtime                 |
+| File Types         | `.lib` / `.a`           | `.dll` / `.so`          |
+| EXE Size           | Larger                  | Smaller                 |
+| Update Flexibility | Low                     | High                    |
+| Memory Usage       | High (duplicate copies) | Low (shared memory)     |
+| Performance        | Faster                  | Slight runtime overhead |
+
 ---
  [Data Types ➡️](/datatypes.md) 
 ---
