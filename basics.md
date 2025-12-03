@@ -358,21 +358,194 @@ g++ main.cpp math.lib -o app.exe
 
 ---
 
-#3. Dynamic Linking (Dynamic Link Library - DLL)
+# **Dynamic Link Library (DLL) in C++**
 
-### What happens?
+A **DLL (Dynamic Link Library)** is a file (usually `.dll` on Windows) that contains **compiled code and data** which can be used **by multiple programs at the same time**, without needing to recompile or embed the code inside every executable.
 
-In dynamic linking, the final executable **does NOT contain the library code**.
-Instead, it stores **only references**, and the library is loaded **at runtime**.
+It allows **modular programming**, **code reuse**, and **dynamic loading of functions** at runtime.
 
 ---
 
-### There are **two types of dynamic linking:**
+# 1. **Static Linking vs Dynamic Linking**
 
-| Linking Type         | Mechanism                                 | Example                            |
-| -------------------- | ----------------------------------------- | ---------------------------------- |
-| **Implicit Linking** | Linker uses import library (`*.lib`)      | `#pragma comment(lib, "Math.lib")` |
-| **Explicit Linking** | Load at runtime using API (`LoadLibrary`) | Used in plugin/driver systems      |
+## **Static Library (.lib)**
+
+* Code is **copied** into the final executable (`.exe`).
+* Increases executable size.
+* No sharing between programs.
+* All code is fixed at compile time.
+
+## **Dynamic Library (.dll)**
+
+* Code is **NOT copied** into the executable.
+* Your app loads the DLL **during run time**.
+* Smaller EXE size.
+* Multiple programs can share the same DLL in memory.
+* DLLs can be **updated independently** (modular design).
+
+---
+
+# 2. **Why DLL? — Real-world Use**
+
+* Windows OS uses DLLs (`kernel32.dll`, `user32.dll`, etc.)
+* Games load plugin DLLs (graphics engine, input handler).
+* Enterprise apps share a common module via DLL.
+
+---
+
+#  3. **Creating a DLL in C++ (Windows)**
+
+###  Step 1: **Write the DLL code**
+
+```cpp
+// MyMath.cpp
+#include <iostream>
+using namespace std;
+
+extern "C" __declspec(dllexport) 
+int add(int a, int b) {
+    return a + b;
+}
+
+extern "C" __declspec(dllexport)
+int mul(int a, int b) {
+    return a * b;
+}
+```
+
+### Why `extern "C"`?
+
+* Prevents **name mangling**
+* Makes exported symbols easy to load dynamically.
+
+### Why `__declspec(dllexport)`?
+
+* Tells compiler: "export this function to DLL".
+
+---
+
+#  4. **Using a DLL — Two Ways**
+
+---
+
+## **Method 1: Implicit Linking (Using Import Library .lib)**
+
+EXE is linked with `.lib`, DLL loads automatically at startup.
+
+### Client program:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+extern "C" __declspec(dllimport) int add(int, int);
+extern "C" __declspec(dllimport) int mul(int, int);
+
+int main() {
+    cout << add(10, 20) << endl;
+    cout << mul(10, 3) << endl;
+}
+```
+
+---
+
+## **Method 2: Explicit Linking (Load DLL at runtime)**
+
+Using **LoadLibrary + GetProcAddress**
+
+This is asked in interviews frequently.
+
+### Client Program:
+
+```cpp
+#include <windows.h>
+#include <iostream>
+using namespace std;
+
+typedef int (*AddFunc)(int, int);
+
+int main() {
+    HMODULE h = LoadLibrary("MyMath.dll");
+    if (!h) {
+        cout << "Could not load DLL\n";
+        return 1;
+    }
+
+    AddFunc add = (AddFunc)GetProcAddress(h, "add");
+    if (!add) {
+        cout << "Function not found\n";
+        return 1;
+    }
+
+    cout << "Add = " << add(10, 20) << endl;
+
+    FreeLibrary(h);
+}
+```
+
+---
+
+#  5. **Exporting Classes from DLL**
+
+```cpp
+// MyClass.h
+class __declspec(dllexport) MyCalc {
+public:
+    int square(int x) {
+        return x * x;
+    }
+};
+```
+
+Client:
+
+```cpp
+class __declspec(dllimport) MyCalc;
+```
+
+---
+
+# 6. **Advantages of DLLs**
+
+### **Reduced memory footprint**
+
+Multiple applications share the same DLL in RAM.
+
+###  **Smaller executable size**
+
+###  **Easy updates**
+
+You can update one DLL instead of rebuilding entire application.
+
+###  **Plugin / modular architecture**
+
+###  **Better code reuse**
+
+---
+
+#  7. **Disadvantages of DLLs**
+
+###  DLL Hell
+
+* Multiple versions of the same DLL cause conflicts.
+
+###  Missing DLL
+
+* App fails to start if DLL not found.
+
+###  Runtime errors
+
+* If DLL is corrupted or mismatched architecture (x86 vs x64).
+
+---
+
+# 8. **When to use DLL in C++**
+
+* When many programs share common logic
+* When you want to update modules independently
+* When you want plugin support
+* When reducing EXE size matters
+* When code isolation/security is needed
 
 ---
 
