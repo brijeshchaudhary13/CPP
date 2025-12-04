@@ -5628,6 +5628,167 @@ for(int i = 0; i < 6; i++) {
 * Documented code changes and prepared **build releases**.
 
 ---
+Below is **your full list of questions rewritten properly**, clearly, and professionally.
+I **did NOT solve** the questions—where an answer was already given by you, I still rewrote the question exactly as requested.
+
+---
+
+##  **Hughes Systique (HSC) interview Questions**
+Round 2: 50 min
+
+### **Q1. Write shared pointer class implementation (without using any library). Also explain: what is a shared pointer?**
+
+---
+
+### **Q2. What is `dynamic_cast`?**
+
+---
+
+### **Q3. If I have a class variable declared as `mutable`, what is the relevance or use of `mutable`?**
+
+---
+
+### **Q4. What is the purpose of the `volatile` keyword?**
+
+---
+
+### **Q5. Write a class `A` having the following member variables:**
+
+* `static int x`
+* `char* y`
+* `std::string s`
+* `const int p`
+* `int& q`
+
+**Write a parameterized constructor to initialize all of these.**
+
+**Given Solution:**
+*(You provided this code; I am rewriting the question only)*
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class A {
+public:
+    static int x;     
+    char* y;          
+    string s;         
+    const int p;      
+    int& q;           
+
+    A(char* yVal, const string& str, int pVal, int& qRef)
+      : y(yVal),
+        s(str),
+        p(pVal),
+        q(qRef)
+    {
+        A::x++;
+    }
+};
+
+int A::x = 0;
+
+int main() {
+    int num = 50;
+    char arr[] = "Hello";
+
+    A obj(arr, "Sample", 10, num);
+
+    cout << "Static x: " << A::x << endl;
+    cout << "y: " << obj.y << endl;
+    cout << "s: " << obj.s << endl;
+    cout << "p: " << obj.p << endl;
+    cout << "q: " << obj.q << endl;
+}
+```
+
+---
+
+### **Q6. Why is `int A::x = 0;` initialized with zero?**
+
+### **Also, write a method to display the static variable, and inside this method increment `x++` and `q++`.**
+
+### **Add one more method named `add()`. If we perform `p++` inside the add method, what will happen?**
+
+### **If we make the add method `const`, what changes?**
+
+### **If we remove `p++`, will the code compile and work?**
+
+**Given Solution:**
+*(You provided this code; question rewritten only)*
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class A {
+public:
+    static int x;
+    char* y;
+    string s;
+    const int p;
+    int& q;
+
+    A(char* yVal, const string& str, int pVal, int& qRef)
+        : y(yVal), s(str), p(pVal), q(qRef) {}
+
+    static void display() {
+        cout << "Value of x = " << x << endl;
+    }
+
+    void add() const {
+        x++;
+        q++;
+        // p++;  // not allowed
+    }
+};
+
+int A::x = 0;
+
+int main() {
+    int value = 5;
+    char text[];
+}
+```
+
+---
+
+### **Q7. What is the difference between composition and inheritance?**
+
+---
+
+### **Q8. Implement `strcpy` (string copy) without using any inbuilt functions.**
+
+---
+
+### **Q9. What is function overriding? When is it used?**
+
+---
+
+### **Q10. What is runtime polymorphism?**
+
+---
+
+### **Q11. What are virtual tables (vtable) and `vptr`? When is `vptr` created?**
+
+---
+
+### **Q12. Which debugging tools are commonly used?**
+
+---
+
+### **Q13. What tools are used to detect memory leaks?**
+
+---
+
+### **Q14. How do you run GDB (GNU Debugger)?**
+
+---
+
+
 ---
 
 इंटरव्यू के अंत में जब इंटरव्यूअर आपसे पूछे, "Do you have any questions for us?" — तब आपके द्वारा पूछे गए सवाल आपकी curiosity, seriousness और कंपनी में genuine interest को दर्शाते हैं। नीचे कुछ बेहतरीन और **प्रभावशाली सवाल** दिए गए हैं जो आप इंटरव्यू के अंत में पूछ सकते हैं:
