@@ -6089,6 +6089,253 @@ Achieved using **virtual functions + base class pointer/reference**.
    ```
 
 ---
+##  **Acitivia interview Questions**
+Round 1: 35 min
+
+# ✅ **Q1. Write a C++ program demonstrating all major features of OOPS.**
+
+### **Answer:**
+
+This program shows:
+
+✔ Class & Objects
+✔ Encapsulation
+✔ Abstraction
+✔ Inheritance (single, multilevel, hierarchical)
+✔ Polymorphism (compile-time & runtime)
+✔ Function overloading & overriding
+✔ Constructors & destructors
+✔ Virtual functions
+✔ Dynamic binding
+
+### **PROGRAM:**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Encapsulation + Abstraction
+class Person {
+private:
+    string name;
+    int age;
+
+public:
+    Person(string n, int a) : name(n), age(a) {}
+    void showDetails() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+    ~Person() {}
+};
+
+// Single Inheritance
+class Student : public Person {
+protected:
+    int roll;
+
+public:
+    Student(string n, int a, int r) : Person(n, a), roll(r) {}
+    void showStudent() {
+        showDetails();
+        cout << "Roll No: " << roll << endl;
+    }
+};
+
+// Multilevel Inheritance
+class CollegeStudent : public Student {
+private:
+    string branch;
+
+public:
+    CollegeStudent(string n, int a, int r, string b)
+        : Student(n, a, r), branch(b) {}
+    void showCollegeStudent() {
+        showStudent();
+        cout << "Branch: " << branch << endl;
+    }
+};
+
+// Hierarchical Inheritance
+class Teacher : public Person {
+private:
+    string subject;
+
+public:
+    Teacher(string n, int a, string s) : Person(n, a), subject(s) {}
+    void showTeacher() {
+        showDetails();
+        cout << "Subject: " << subject << endl;
+    }
+};
+
+// Compile-time Polymorphism (overloading)
+class Math {
+public:
+    int add(int a, int b) { return a + b; }
+    float add(float a, float b) { return a + b; }
+};
+
+// Runtime Polymorphism (overriding)
+class Animal {
+public:
+    virtual void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "Cat meows" << endl;
+    }
+};
+
+int main() {
+
+    cout << "=== OOPS Concepts ===" << endl;
+
+    CollegeStudent cs("Amit", 20, 101, "CSE");
+    cs.showCollegeStudent();
+
+    Teacher t("Ravi", 45, "Physics");
+    t.showTeacher();
+
+    Math m;
+    cout << "Int Add = " << m.add(5, 6) << endl;
+    cout << "Float Add = " << m.add(3.5f, 4.7f) << endl;
+
+    Animal *a;
+    Dog d;
+    Cat c;
+
+    a = &d;
+    a->sound();
+
+    a = &c;
+    a->sound();
+
+    return 0;
+}
+```
+
+---
+
+# ✅ **Q2. Smart pointers: write a program for all smart pointers.
+
+Also, can you initialize `unique_ptr` without `make_unique`?
+And in which C++ version was `make_unique` introduced?**
+
+### **Answer:**
+
+### ✔ `make_unique` was introduced in **C++14**
+
+### ✔ Yes, you can initialize `unique_ptr` without `make_unique` (C++11 style).
+
+Example:
+
+```cpp
+unique_ptr<int> ptr(new int(10));
+```
+
+---
+
+### **PROGRAM: All Smart Pointers**
+
+```cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Demo {
+public:
+    Demo() { cout << "Constructor\n"; }
+    ~Demo() { cout << "Destructor\n"; }
+};
+
+int main() {
+
+    cout << "=== unique_ptr ===" << endl;
+
+    // C++14 safe method
+    unique_ptr<int> u1 = make_unique<int>(10);
+
+    // C++11 method (without make_unique)
+    unique_ptr<int> u2(new int(20));
+
+    cout << *u1 << " " << *u2 << endl;
+
+    // Ownership transfer
+    unique_ptr<int> u3 = move(u2);
+
+    cout << *u3 << endl;
+
+    cout << "\n=== shared_ptr ===" << endl;
+    shared_ptr<Demo> s1 = make_shared<Demo>();
+
+    {
+        shared_ptr<Demo> s2 = s1;
+        cout << "Shared count: " << s1.use_count() << endl;
+    }
+
+    cout << "Shared count after block: " << s1.use_count() << endl;
+
+    cout << "\n=== weak_ptr ===" << endl;
+    weak_ptr<Demo> w1 = s1;
+
+    if (auto temp = w1.lock()) {
+        cout << "weak_ptr is valid\n";
+    }
+
+    return 0;
+}
+```
+
+---
+
+# ✅ **Q3. Write a function pointer program that takes two integers and returns one float.**
+
+### **Answer:**
+
+### ✔ Function takes `(int, int)`
+
+### ✔ Returns `float`
+
+### ✔ Function pointer type:
+
+```c
+float (*ptr)(int, int);
+```
+
+### **PROGRAM:**
+
+```c
+#include <stdio.h>
+
+// Function that takes 2 int and returns float
+float A(int a, int b) {
+    float c = a + b;
+    return c;
+}
+
+int main() {
+    // Function pointer
+    float (*ptr)(int, int) = A;
+
+    float result = ptr(5, 6);
+    printf("%f\n", result);
+
+    return 0;
+}
+```
+
+---
 
 
 
