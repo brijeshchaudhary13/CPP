@@ -5787,6 +5787,309 @@ int main() {
 ### **Q14. How do you run GDB (GNU Debugger)?**
 
 ---
+Below are **all questions rewritten clearly**, followed by **accurate and interview-ready answers**.
+
+---
+
+# ✅ **Q1. Write shared pointer class implementation (without using any library). Also explain: what is a shared pointer?**
+
+### **Answer:**
+
+A **shared pointer** is a smart pointer that maintains **reference counting**.
+Multiple shared pointers can point to the same object, and the object is destroyed **only when the last shared pointer goes out of scope**.
+
+### **Simple Implementation:**
+
+```cpp
+template <typename T>
+class SharedPtr {
+private:
+    T* ptr;
+    int* refCount;
+
+public:
+    SharedPtr(T* p = nullptr) : ptr(p), refCount(new int(1)) {}
+
+    SharedPtr(const SharedPtr& other) {
+        ptr = other.ptr;
+        refCount = other.refCount;
+        ++(*refCount);
+    }
+
+    SharedPtr& operator=(const SharedPtr& other) {
+        if (this != &other) {
+            if (--(*refCount) == 0) {
+                delete ptr;
+                delete refCount;
+            }
+            ptr = other.ptr;
+            refCount = other.refCount;
+            ++(*refCount);
+        }
+        return *this;
+    }
+
+    ~SharedPtr() {
+        if (--(*refCount) == 0) {
+            delete ptr;
+            delete refCount;
+        }
+    }
+
+    T* operator->() { return ptr; }
+    T& operator*() { return *ptr; }
+};
+```
+
+---
+
+# ✅ **Q2. What is `dynamic_cast`?**
+
+### **Answer:**
+
+`dynamic_cast` is used for **safe downcasting** in polymorphic class hierarchies.
+It uses **runtime type information (RTTI)** to check whether the cast is valid.
+
+If invalid:
+
+* For pointers → returns `nullptr`
+* For references → throws `bad_cast` exception
+
+---
+
+# ✅ **Q3. What is the relevance of `mutable` keyword?**
+
+### **Answer:**
+
+`mutable` allows a class data member to be **modified even inside a const member function**.
+
+Example:
+
+```cpp
+class Test {
+    mutable int counter;
+public:
+    void func() const {
+        counter++;  // allowed
+    }
+};
+```
+
+---
+
+# ✅ **Q4. What is the purpose of `volatile` keyword?**
+
+### **Answer:**
+
+`volatile` tells the compiler **not to optimize** the variable because its value may change unexpectedly (hardware registers, multi-threaded flags).
+
+Example:
+
+```cpp
+volatile int flag;
+```
+
+---
+
+# ✅ **Q5. Write a class with static int x, char* y, string, const int p, int& q. Write a parameterized constructor.**
+
+### **Answer (your solution is correct):**
+
+```cpp
+class A {
+public:
+    static int x;
+    char* y;
+    string s;
+    const int p;
+    int& q;
+
+    A(char* yVal, const string& str, int pVal, int& qRef)
+        : y(yVal), s(str), p(pVal), q(qRef)
+    {
+        A::x++;
+    }
+};
+
+int A::x = 0;
+```
+
+---
+
+# ✅ **Q6. Why is `int A::x = 0;` initialized with zero?
+
+Also write display(), add() and explain p++, q++, x++ cases.
+If we remove p++, will it work?**
+
+### **Answer:**
+
+### ✔ Why initialized with zero?
+
+Static variables **must be defined outside** the class.
+If you don't assign a value, it will still default to 0, but explicit initialization is good practice.
+
+---
+
+### ✔ display() method:
+
+```cpp
+static void display() {
+    cout << "x = " << x << endl;
+}
+```
+
+---
+
+### ✔ add() method (const):
+
+```cpp
+void add() const {
+    x++;   // allowed → static variable
+    q++;   // allowed → q refers to external int
+    // p++;  // NOT allowed → p is const
+}
+```
+
+---
+
+### ✔ If we remove `p++`, will code work?
+
+**Yes**, after removing `p++`, the `add()` method will compile successfully.
+
+---
+
+# ✅ **Q7. What is the difference between composition and inheritance?**
+
+### **Answer:**
+
+| **Composition**                  | **Inheritance**                    |
+| -------------------------------- | ---------------------------------- |
+| "Has-a" relationship             | "Is-a" relationship                |
+| Object is part of another object | Class derives behavior from parent |
+| More flexible                    | Less flexible                      |
+| Preferred in modern design       | Can cause tight coupling           |
+
+Example:
+Car *has a* Engine → **composition**
+Car *is a* Vehicle → **inheritance**
+
+---
+
+# ✅ **Q8. Implement `strcpy` without using inbuilt functions.**
+
+### **Answer:**
+
+```cpp
+char* myStrcpy(char* dest, const char* src) {
+    char* temp = dest;
+    while (*src != '\0') {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';
+    return temp;
+}
+```
+
+---
+
+# ✅ **Q9. What is function overriding? When is it used?**
+
+### **Answer:**
+
+Function overriding occurs when a **derived class provides a new implementation** of a **virtual function** in the base class.
+
+Used for runtime polymorphism:
+
+```cpp
+class Base {
+public:
+    virtual void show() {}
+};
+
+class Derived : public Base {
+public:
+    void show() override {}
+};
+```
+
+---
+
+# ✅ **Q10. What is runtime polymorphism?**
+
+### **Answer:**
+
+Runtime polymorphism occurs when the function call is resolved **at runtime**, not compile-time.
+Achieved using **virtual functions + base class pointer/reference**.
+
+---
+
+# ✅ **Q11. What is virtual table (vtable) and vptr? When is vptr created?**
+
+### **Answer:**
+
+* **vtable** → Table storing addresses of virtual functions.
+* **vptr** → Hidden pointer inside each object that points to its class’s vtable.
+* **vptr is created by compiler**:
+  ✔ When an object of the class is created
+  ✔ Before the constructor starts executing
+
+---
+
+# ✅ **Q12. Which debugging tools are commonly used?**
+
+### **Answer:**
+
+* GDB
+* Valgrind
+* Visual Studio Debugger
+* LLDB
+* Perf
+* strace / ltrace
+
+---
+
+# ✅ **Q13. What tools detect memory leaks?**
+
+### **Answer:**
+
+* Valgrind (Memcheck)
+* AddressSanitizer (ASan)
+* LeakSanitizer (LSan)
+* Dr.Memory
+* Visual Studio Memory Diagnostics
+
+---
+
+# ✅ **Q14. How to run GDB?**
+
+### **Answer:**
+
+1. Compile with debug symbols:
+
+   ```bash
+   g++ -g main.cpp -o app
+   ```
+2. Run with GDB:
+
+   ```bash
+   gdb ./app
+   ```
+3. Useful commands:
+
+   ```
+   run
+   break main
+   next
+   step
+   print variable
+   continue
+   quit
+   ```
+
+---
+
 
 
 ---
