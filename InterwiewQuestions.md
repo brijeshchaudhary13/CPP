@@ -2312,14 +2312,12 @@ int main() {
 > Size increases if data members or multiple/virtual inheritance is used.
 
 ---
-Here’s a list of **interview questions** based on what you mentioned (like Cyient interviews), along with **brief answers and code examples** to help you prepare thoroughly.
 
----
 
 ### **Cyient - Technical Round Interview**
 ---
-Round 1: 20 Questions C++ MCQ 20 min
-Round 2: 20 Questions C++ MCQ 20 min + Virtual Interview 30 min
+*Round 1: 20 Questions C++ MCQ 20 min
+*Round 2: 20 Questions C++ MCQ 20 min + Virtual Interview 30 min
 ---
 
 ---
@@ -2517,6 +2515,111 @@ A constructor
 B constructor
 B Destructor
 A Destructor
+```
+---
+
+##Round 1: Virtual Interview 30 min
+
+### **Q1. Fix the bug
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+class Base{
+    public:
+    virtual void show(){
+        cout<<"base";
+    }
+};
+class Derived : public Base{
+    public:
+    void show(){
+        cout<<"derived";
+    }
+};
+void display(Base b){
+    b.show();
+}
+//void display(Base &b){    fixed bug
+    
+int main() {
+   Derived d;
+   display(d);
+	
+
+}
+```
+### **Q2. Fix the error
+```cpp
+#include <bits/stdc++.h>
+#include<thread>
+using namespace std;
+
+int counter=0;
+void worker(){
+    for(int i=0; i<1000; i++){
+        counter++;
+    }
+}
+int main() {
+    thread t1(worker);
+     thread t2(worker);
+     t1.join();
+     t2.join();
+     cout<<counter;
+	
+
+}
+
+```
+
+After fixing actually it race condition
+```cpp
+#include <bits/stdc++.h>
+#include<thread>
+#include<mutex>
+using namespace std;
+
+int counter=0;
+mutex m;
+void worker(){
+    for(int i=0; i<1000; i++){
+        m.lock();
+        counter++;
+        m.unlock();
+    }
+}
+int main() {
+    thread t1(worker);
+     thread t2(worker);
+     t1.join();
+     t2.join();
+     cout<<counter;
+	
+}
+```
+### **Q3. Reverse a string
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int counter=0;
+int main() {
+	string str;
+	getline(cin,str);
+	//cin>>str;
+	int n=str.length()-1;
+	int i=0;
+	while(i<n){
+	    char temp = str[i];
+	    str[i]=str[n];
+	    str[n]=temp;
+	    i++;
+	    n--;
+	}
+	cout<<str<<"end";
+
+}
+
 ```
 ---
 ### **Zwayam.com - Technical Round Interview**
