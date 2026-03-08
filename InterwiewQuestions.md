@@ -4845,6 +4845,59 @@ Round 1: 35 min
 14. **Smart pointers** – `unique_ptr`, `shared_ptr`, `weak_ptr`
 15. **Shallow copy** and **deep copy** – with examples
 16. Combined program showing **shallow copy vs deep copy**
+17. What happens if we remove the virtual keyword from a pure virtual function
+18. Abstraction vs Interface (in C++) also write code.
+19. Friend Function in C++, Implement a friend function to access private members of a class
+20. Advanced C++ Topics Used in My Project : 1. Object Oriented Programming (OOP) 2. Smart Pointers (Memory Management) 3. STL (Standard Template Library) 4. Lambda Functions 5. Multithreading 6. Exception Handling 7. Design Patterns
+21. Write a program to take input in array and use a lambda function to filter even numbers
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter elements:\n";
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // Lambda function to check even number
+    auto isEven = [](int x)
+    {
+        return x % 2 == 0;
+    };
+
+    cout << "Even numbers are:\n";
+
+    for(int i = 0; i < n; i++)
+    {
+        if(isEven(arr[i]))
+        {
+            cout << arr[i] << " ";
+        }
+    }
+
+    return 0;
+}
+```
+```
+Input
+Enter size of array: 5
+Enter elements:
+1 2 3 4 6
+Output
+Even numbers are:
+2 4 6
+```
 
 ---
 Round 2: 35 min
