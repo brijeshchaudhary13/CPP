@@ -4533,6 +4533,160 @@ Value of g_i in first.cpp: 100
 ```
 
 ---
+### **WESEE (Delhi) interview – Technical Round Interview**
+Round 1: 30 min
+
+Q1. Tell me about your project in detail.
+
+Q2. Explain Signals and Slots in Qt.
+
+Q3. What are Qt Widgets?
+
+Q4. Explain Object-Oriented Programming (OOP) concepts in C++.
+
+Q5. Explain QObject and QCoreApplication in Qt.
+
+Q6. Copy constructor write example.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int *ptr;
+
+    // Constructor
+    A(int value) {
+        ptr = new int(value);
+        cout << "Constructor Called" << endl;
+    }
+
+    // Copy Constructor
+    A(const A &obj) {
+        ptr = new int(*obj.ptr);  // Deep Copy
+        cout << "Copy Constructor Called" << endl;
+    }
+
+    void display() {
+        cout << "*ptr = " << *ptr << endl;
+    }
+
+    // Destructor
+    ~A() {
+        delete ptr;
+    }
+};
+
+int main() {
+    A obj1(5);
+
+    A obj2 = obj1;   // Copy Constructor Called
+
+    obj1.display();
+    obj2.display();
+
+    return 0;
+}
+
+```
+
+Q7. Tell me what output will come
+```cpp
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "Cat meows" << endl;
+    }
+};
+
+int main() {
+    Animal *ptr;
+
+    Dog d;
+    Cat c;
+
+    ptr = &d;
+    ptr->sound();    // Dog barks
+
+    ptr = &c;
+    ptr->sound();    // Cat meows
+
+    return 0;
+}
+```
+Output
+```
+Dog barks
+```
+
+Q8 Tell me what Output will come
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+     void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "Cat meows" << endl;
+    }
+};
+
+int main() {
+    Animal *ptr;
+
+    Dog d;
+    Cat c;
+
+    ptr = &d;
+    ptr->sound();    // Dog barks
+
+    ptr = &c;
+    ptr->sound();    // Cat meows
+
+    return 0;
+
+```
+Ouput
+```
+Animal makes a sound
+```
+
+
+
+---
 ### **Ceipal for Siemens interview – Technical Round Interview**
 Round 1: 30 min
 
