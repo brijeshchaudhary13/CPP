@@ -6646,6 +6646,29 @@ int main() {
 ```
 
 ---
+# Prescient Technologies (Pune) – C++ Technical Interview Questions
+
+**Interview Duration:** 30 Minutes
+
+1. Give your introduction based on your project in detail.
+
+2. What is polymorphism?
+
+   * What are the types of polymorphism?
+   * What is function overriding?
+
+3. What is the Diamond Problem?
+
+   * Why does the Diamond Problem occur?
+   * How can the Diamond Problem be resolved?
+   * Explain the solution with an example.
+
+4. Write a C++ program to find the sum of both diagonals of a matrix.
+
+   * Take the matrix size dynamically as input from the user.
+
+
+---
 
 
 
