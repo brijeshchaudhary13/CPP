@@ -22,13 +22,13 @@ In C++, **an array** is a collection of **elements of the same data type**, stor
 
     int numbers[5]={0}; cout<<"Numbers"<<Numbers[i]; = 0,0,0,0,0
 
-    int numbers[]={1,2,3,4,5}; cout<<"Numbers"<<Numbers[i]<<"Size = "; = 1,2,3,4,5 Size = 5
+    int numbers[]={1,2,3,4,5}; cout<<"Numbers"<<Numbers[i]<<"Size = "<< size << endl; = 1,2,3,4,5 Size = 5
 
-    cout<<arr=<<A[2];  2
+    cout<<arr=<<A[2]; // 3
 
-    cout<<arr=<<2[A];  2
+    cout<<arr=<<2[A]; // 3
 
-    cout<<arr=<<*(A+2);  2
+    cout<<arr=<<*(A+2); // 3
 
 ```
 
