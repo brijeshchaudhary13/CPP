@@ -1,3 +1,56 @@
+HCL
+
+ ✅ Difference in C & C++?
+ ✅ OOP Pillars Explain ?
+ ✅ Constructors & Destructors ?
+ ✅ Virtual Functions  & Virtual Keyword ?
+ ✅ Pointers & References ?
+ ✅ Memory Management ?
+ ✅ Smart Pointers ?
+ ✅ RAII ?
+ ✅ Copy & Move Semantics ?
+ ✅ Rule of 3 / Rule of 5
+ ✅ NULL and nullptr ?
+ ✅ Virtual Keyword ?
+ ✅ Lambda Expressions ?
+ ✅ Exception Handling ?
+ ✅ Debugging & Segmentation Faults ?
+ ✅  new vs malloc().
+ ✅ delete vs free().
+ ✅ Wht is Deep copy & Shallow Copy ?
+ ✅ Friend Function ?
+
+ capegimini
+
+ #include <bits/stdc++.h>
+using namespace std;
+
+void rawpPointer(){
+    int *ptr = new int(5);
+    cout<<*ptr;
+}
+
+void smartpointer(){
+    unique_ptr<int> pr = make_unique(20);
+	
+	shared_ptr<int>sp = make_shared(10);
+	shared_ptr<int>sp2 =sp1;
+	
+	cout<<*sp<<*sp2;
+	
+	
+    
+}
+int main() {
+	rawpPointer();
+	smartpointer();
+	
+
+}
+
+smart pointer, desgine pattern other than singlton, so tell factory
+----
+
 ### **Planystech.com - Interview Questions**
 
 #### **Q1. Vehicle Number Plate Combinations**
