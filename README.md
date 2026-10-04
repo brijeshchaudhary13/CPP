@@ -35,7 +35,7 @@ A comprehensive guide to essential C++ topics. Use this as a roadmap to learn an
 | 29         | [Desgine Pattern](https://github.com/brijeshc1307/DesginePattern/tree/main) | Class, objects, inheritance, abstraction, polymorphism, etc.                   |
 
 ---
-
+[Desgine Pattern](/Brijesh_Updated_3_Year_Career_Roadmap_CPP_Qt_AI.pdf)
 
 
 
