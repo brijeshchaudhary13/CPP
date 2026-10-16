@@ -1,24 +1,24 @@
 HCL
 
-## 1. Difference in C & C++?
-## 2. OOP Pillars Explain ?
-## 3. Constructors & Destructors ?
-## 4. Virtual Functions  & Virtual Keyword ?
-## 5. Pointers & References ?
-## 6. Memory Management ?
-## 7. Smart Pointers ?
-## 8. RAII ?
-## 9. Copy & Move Semantics ?
-## 10. Rule of 3 / Rule of 5
-## 11. NULL and nullptr ?
-## 12. Virtual Keyword ?
-## 13. Lambda Expressions ?
-## 14. Exception Handling ?
-## 15. Debugging & Segmentation Faults ?
-## 16. new vs malloc().
-## 17. delete vs free().
-## 18. Wht is Deep copy & Shallow Copy ?
-## 19. Friend Function ?
+1. Difference in C & C++?
+2. OOP Pillars Explain ?
+3. Constructors & Destructors ?
+4. Virtual Functions  & Virtual Keyword ?
+5. Pointers & References ?
+6. Memory Management ?
+7. Smart Pointers ?
+8. RAII ?
+9. Copy & Move Semantics ?
+10. Rule of 3 / Rule of 5
+11. NULL and nullptr ?
+12. Virtual Keyword ?
+13. Lambda Expressions ?
+14. Exception Handling ?
+15. Debugging & Segmentation Faults ?
+16. new vs malloc().
+17. delete vs free().
+18. Wht is Deep copy & Shallow Copy ?
+19. Friend Function ?
 
  capegimini
 
@@ -6744,49 +6744,28 @@ int main() {
 
 # Dassault Systèmes C++ Interview 
 **Interview Duration:** 60 Minutes Online 1 st round
-## 1. Tell me about yourself.
-
-## 2. Tell me about your current project.
-
-## 3. Tell me about your previous project at TCS.
-
-## 4. What is your notice period?
-
-## 5. What is inheritance in C++?
-
-## 6. What are the different types of inheritance in C++?
-
-## 7. What is multiple inheritance?
-
-## 8. What is hierarchical inheritance?
-
-## 9. What is the difference between multiple and hierarchical inheritance?
-
-## 10. Write a C++ program to demonstrate multiple inheritance.
-
-## 11. Write a C++ program to demonstrate hierarchical inheritance.
-
-## 12. What is the diamond problem in C++?
-
-## 13. Why does the diamond problem occur?
-
-## 14. What is virtual inheritance in C++?
-
-## 15. How can you solve the diamond problem using virtual inheritance?
-
-## 16. What is the difference between normal inheritance and virtual inheritance?
-
-## 17. What happens if two base classes contain functions with the same name?
-
-## 18. How do you resolve ambiguity in multiple inheritance?
-
-## 19. In what order are constructors called in multiple inheritance?
-
-## 20. What is the difference between compile-time and runtime polymorphism?
-
-## 21. Explain a practical use case for multiple inheritance in Your Project.
-
-## 22. Explain a practical use case for hierarchical inheritance in Your Project.
+1. Tell me about yourself.
+2. Tell me about your current project.
+3. Tell me about your previous project at TCS.
+4. What is your notice period?
+5. What is inheritance in C++?
+6. What are the different types of inheritance in C++?
+7. What is multiple inheritance?
+8. What is hierarchical inheritance?
+9. What is the difference between multiple and hierarchical inheritance?
+10. Write a C++ program to demonstrate multiple inheritance.
+11. Write a C++ program to demonstrate hierarchical inheritance.
+12. What is the diamond problem in C++?
+13. Why does the diamond problem occur?
+14. What is virtual inheritance in C++?
+15. How can you solve the diamond problem using virtual inheritance?
+16. What is the difference between normal inheritance and virtual inheritance?
+17. What happens if two base classes contain functions with the same name?
+18. How do you resolve ambiguity in multiple inheritance?
+19. In what order are constructors called in multiple inheritance?
+20. What is the difference between compile-time and runtime polymorphism?
+21. Explain a practical use case for multiple inheritance in Your Project.
+22. Explain a practical use case for hierarchical inheritance in Your Project.
 ---
 
 इंटरव्यू के अंत में जब इंटरव्यूअर आपसे पूछे, "Do you have any questions for us?" — तब आपके द्वारा पूछे गए सवाल आपकी curiosity, seriousness और कंपनी में genuine interest को दर्शाते हैं। नीचे कुछ बेहतरीन और **प्रभावशाली सवाल** दिए गए हैं जो आप इंटरव्यू के अंत में पूछ सकते हैं:
