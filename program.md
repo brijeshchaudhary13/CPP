@@ -1,4 +1,4 @@
-1. Write a program for smart pointers with raw pointer? (Capigimini, )
+##1. **Write a program for smart pointers with raw pointer? (Capigimini, )**
 ```cpp
 #include <iostream>
 #include <memory>
@@ -53,7 +53,8 @@ int main() {
     return 0;
 }
 ```
-2. WAP for Define integer array {1,2,3,4,5} ,Calculate the size of the array, Print each element on a newline (Planystech, )
+----
+##2. **WAP for Define integer array {1,2,3,4,5} ,Calculate the size of the array, Print each element on a newline (Planystech, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -74,7 +75,8 @@ int main() {
     return 0;
 }
 ```
-4. Binary Search vs Linear Search also write Program? (Planystech, )
+----
+##3. **Binary Search vs Linear Search also write Program? (Planystech, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -141,7 +143,8 @@ int main()
     return 0;
 }
 ```
-Write Program for Function Overloading? (XYZ, )
+----
+##4. **Write Program for Function Overloading? (XYZ, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -171,7 +174,8 @@ int main() {
     return 0;
 }
 ```
-Write a program for Method Overriding (XYZ, )
+----
+##5. **Write a program for Method Overriding (XYZ, )**
 ```cpp
 #include <iostream>
 using namespace std;
