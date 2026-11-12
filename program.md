@@ -250,7 +250,6 @@ Yes
 7. **A a;
     a += a;
     Explanation this? (HCL, )**
-
 This is an example of Operator Overloading in C++. The += operator must be overloaded in class A for this operation to work.
 ----
 8. **Write array input random 0–9, with odd numbers first, even numbers next (in-place) (HCL, )**
@@ -363,10 +362,9 @@ int main() {
 ```
 Answer
 This code compiles successfully without any error and executes normally.
-
 It demonstrates a Lambda Function (Anonymous Function) in C++.
 
----
+----
 12. **Is this code valid? Why or why not? (HCL)**
 
 ```cpp
@@ -379,15 +377,17 @@ int main() {
 }
 ```
 Answer
-Compilation Error
-No, this code is invalid because an rvalue reference cannot bind directly to an lvalue.
+Compilation Error No, this code is invalid because an rvalue reference cannot bind directly to an lvalue.
+
 ---
+
 13. **Print the pattern: (HCL, )**
+```cpp
       * * * * 
     * * * * 
   * * * * 
 * * * *
-
+```
 ```cpp
 #include <iostream>
 using namespace std;
