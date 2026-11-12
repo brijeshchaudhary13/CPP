@@ -1,4 +1,4 @@
-##1. **Write a program for smart pointers with raw pointer? (Capigimini, )**
+1. **Write a program for smart pointers with raw pointer? (Capigimini, )**
 ```cpp
 #include <iostream>
 #include <memory>
@@ -54,7 +54,7 @@ int main() {
 }
 ```
 ----
-##2. **WAP for Define integer array {1,2,3,4,5} ,Calculate the size of the array, Print each element on a newline (Planystech, )**
+2. **WAP for Define integer array {1,2,3,4,5} ,Calculate the size of the array, Print each element on a newline (Planystech, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -76,7 +76,7 @@ int main() {
 }
 ```
 ----
-##3. **Binary Search vs Linear Search also write Program? (Planystech, )**
+3. **Binary Search vs Linear Search also write Program? (Planystech, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -144,7 +144,7 @@ int main()
 }
 ```
 ----
-##4. **Write Program for Function Overloading? (XYZ, )**
+4. **Write Program for Function Overloading? (XYZ, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -175,7 +175,7 @@ int main() {
 }
 ```
 ----
-##5. **Write a program for Method Overriding (XYZ, )**
+5. **Write a program for Method Overriding (XYZ, )**
 ```cpp
 #include <iostream>
 using namespace std;
@@ -221,9 +221,9 @@ int main() {
 }
 ```
 ---
-Q int a = 5;
+6. **int a = 5;
    int b[a];
-   What happens here? (HCL, )
+   What happens here? (HCL, )**
 
 
 Declaration
@@ -246,15 +246,15 @@ vector<int> b(a);
 
 Yes
 
-
-Q A a;
+----
+7. **A a;
     a += a;
-    Explanation this? (HCL, )
+    Explanation this? (HCL, )**
 
 This is an example of Operator Overloading in C++. The += operator must be overloaded in class A for this operation to work.
-
-Write array input random 0–9, with odd numbers first, even numbers next (in-place) (HCL, )
-
+----
+8. **Write array input random 0–9, with odd numbers first, even numbers next (in-place) (HCL, )**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -280,11 +280,11 @@ int main() {
 
     return 0;
 }
+```
+---
+9. **Reads a string and prints each word along with its frequency.(HCL, )**
 
-
-12. Reads a string and prints each word along with its frequency.(HCL, )
-
-
+```cpp
 #include <iostream>
 #include <sstream>
 #include <unordered_map>
@@ -309,9 +309,10 @@ int main() {
 
     return 0;
 }
- 
-13. Given a string s, return the first character that does not repeat (i.e., appears exactly once) in the string. (HCL, )
-
+```
+---
+10. **Given a string s, return the first character that does not repeat (i.e., appears exactly once) in the string. (HCL, )**
+```cpp
 #include <iostream>
 #include <string>
 #include <unordered_map>
@@ -348,7 +349,10 @@ int main() {
 
     return 0;
 }
-14. What does this code do? (HCL, )
+```
+---
+11. **What does this code do? (HCL, )**
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -356,36 +360,35 @@ int main() {
     []{}();
     return 0;
 }
-
+```
 Answer
 This code compiles successfully without any error and executes normally.
 
 It demonstrates a Lambda Function (Anonymous Function) in C++.
 
+---
+12. **Is this code valid? Why or why not? (HCL)**
 
-15. Is this code valid? Why or why not? (HCL)
-Code
-
-cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
-
 int main() {
     int a;
     int &&b = a;
     return 0;
 }
+```
 Answer
 Compilation Error
 No, this code is invalid because an rvalue reference cannot bind directly to an lvalue.
-
-16.Print the pattern: (HCL, )
+---
+13. **Print the pattern: (HCL, )**
       * * * * 
     * * * * 
   * * * * 
 * * * *
 
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -410,8 +413,10 @@ int main() {
 
     return 0;
 }
-
-17 Is this code valid? Why or why not? (HCL, )
+```
+---
+14. **Is this code valid? Why or why not? (HCL, )**
+```cpp
 #include <iostream>
 
 int main() {
@@ -423,8 +428,10 @@ int main() {
 
     return 0;
 }
-
-18 What is the issue in the following code? (HCL, )
+```
+----
+15. **What is the issue in the following code? (HCL, )**
+```cpp
 void createMemory() {
     int* p = new int[100];    
 }
@@ -435,14 +442,14 @@ int main() {
     }
     return 0;
 }
-
+```
 Ans: Memory Leak problem
 The code has a memory leak because dynamically allocated memory is never released using delete[].
 
-
-19. Remove duplicate elements while maintaining the order
-Problem Statement: Write a C++ program to remove duplicate elements from an array while maintaining the original order of appearance. (Gentrack, )
-
+---
+16. **Remove duplicate elements while maintaining the order
+Problem Statement: Write a C++ program to remove duplicate elements from an array while maintaining the original order of appearance. (Gentrack, )**
+```cpp
 #include <iostream>
 #include <vector>
 #include <unordered_set>
@@ -471,9 +478,9 @@ int main() {
 
     return 0;
 }
-
+```
 Alternative: Without Using STL (Nested Loops)
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -506,10 +513,11 @@ int main() {
 
     return 0;
 }
+```
+---
+17. **Write a C++ function to transpose a square matrix in-place.(Gentrack, )**
 
-20. Write a C++ function to transpose a square matrix in-place.(Gentrack, )
-
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -551,10 +559,10 @@ int main() {
 
     return 0;
 }
-
-
-22 Generate Fibonacci Sequence (first N terms), Calculate the Fibonacci Sequence (Recursive version)(Gentrack, )
-
+```
+---
+18. **Generate Fibonacci Sequence (first N terms), Calculate the Fibonacci Sequence (Recursive version)(Gentrack, )**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -581,8 +589,8 @@ int main() {
 
     return 0;
 }
-
-
+```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -604,12 +612,12 @@ int main() {
 
     return 0;
 }
+```
+---
+19. **FizzBuzz Problem 
+Problem Statement: Print numbers from 1 to N. For multiples of 3 print "Fizz", for 5 print "Buzz", and for both print "FizzBuzz". (Gentrack, )**
 
-
-FizzBuzz Problem 
-Problem Statement: Print numbers from 1 to N. For multiples of 3 print "Fizz", for 5 print "Buzz", and for both print "FizzBuzz". (Gentrack, )
-
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -637,11 +645,11 @@ int main() {
 
     return 0;
 }
+```
+---
+20. **Check Palindrome String (Iterative + Recursive) (iQuest, Apexon, Tech Mahindra)**
 
-
-25. Check Palindrome String (Iterative + Recursive) (iQuest, Apexon, Tech Mahindra)
-
-
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -676,9 +684,9 @@ int main() {
 
     return 0;
 }
+```
 
-
-
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -711,3 +719,5 @@ int main() {
 
     return 0;
 }
+```
+----
