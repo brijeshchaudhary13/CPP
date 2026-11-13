@@ -1112,7 +1112,7 @@ int main() {
 }
 ```
 ---
-30. **Reverse a string (Cyient, )**
+30. **Reverse a string (Cyient, Infinite )**
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1161,7 +1161,7 @@ int main() {
 }
 ```
 ---
- 31. **reverse the order of words in a sentence or 35  WAP in C++ to Reverse a Line Word by Word (Zwayam, )**
+ 31. **Write a C++ program to reverse the order of words in a given sentence without reversing the individual characters of each word. Input string: "This is my text" → Output string: "text my is This" — explain implement.(Zwayam, Tietoevry)**
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1904,5 +1904,603 @@ Dog barks
 Cat meows
 ```
 ---
+51. **Tell me what Output will come (WESEE, )**
+```cpp
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+     void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "Cat meows" << endl;
+    }
+};
+
+int main() {
+    Animal *ptr;
+
+    Dog d;
+    Cat c;
+
+    ptr = &d;
+    ptr->sound();    // Dog barks
+
+    ptr = &c;
+    ptr->sound();    // Cat meows
+
+    return 0;
+}
+```
+---
+52. **Write all type constructor and given variable, use following variable (Ceipal for Siemens , )**
+	```
+	const char* ptr;   // pointer to const char*
+    double num;         // a number
+    string str;         // a string
+    double &num2;       // reference to a double
+    ```
+
+```cpp
+#include <iostream>
+#include <string>
+#include <utility>
+using namespace std;
+
+class Demo {
+    const char* ptr;
+    double num;
+    string str;
+    double &num2;
+
+public:
+
+    // 1. Default constructor
+    Demo(double &r)
+        : ptr("Default"), num(0.0),
+          str("Unknown"), num2(r) {
+        cout << "Default Constructor" << endl;
+    }
+
+    // 2. Parameterized constructor
+    Demo(const char* p, double n, string s, double &r)
+        : ptr(p), num(n), str(s), num2(r) {
+        cout << "Parameterized Constructor" << endl;
+    }
+
+    // 3. Copy constructor
+    Demo(const Demo &obj)
+        : ptr(obj.ptr), num(obj.num),
+          str(obj.str), num2(obj.num2) {
+        cout << "Copy Constructor" << endl;
+    }
+
+    // 4. Constructor with default arguments
+    Demo(const char* p, double n, double &r,
+         string s = "Hello")
+        : ptr(p), num(n), str(s), num2(r) {
+        cout << "Default Argument Constructor" << endl;
+    }
+
+    // 5. Move constructor
+    Demo(Demo &&obj) noexcept
+        : ptr(obj.ptr), num(obj.num),
+          str(move(obj.str)), num2(obj.num2) {
+        cout << "Move Constructor" << endl;
+    }
+
+    void display() {
+        cout << "Pointer value: " << ptr << endl;
+        cout << "Number: " << num << endl;
+        cout << "String: " << str << endl;
+        cout << "Reference value: " << num2 << endl;
+    }
+
+    ~Demo() {
+        cout << "Destructor called" << endl;
+    }
+};
+
+int main() {
+
+    double x = 100.5;
+
+    // Default constructor
+    Demo d1(x);
+    d1.display();
+
+    cout << "\n";
+
+    // Parameterized constructor
+    Demo d2("Siemens", 25.5, "C++", x);
+    d2.display();
+
+    cout << "\n";
+
+    // Copy constructor
+    Demo d3(d2);
+    d3.display();
+
+    cout << "\n";
+
+    // Default argument constructor
+    Demo d4("Interview", 50.5, x);
+    d4.display();
+
+    cout << "\n";
+
+    // Move constructor
+    Demo d5(move(d2));
+    d5.display();
+
+    return 0;
+}
+```
+---
+53. **Write a program to store values, and display them in vector? (Delta IoT - John Deere, )**
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> vec;
+    int n, value;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter value: ";
+        cin >> value;
+        vec.push_back(value);
+    }
+
+    cout << "Vector elements: ";
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout << vec[i] << " ";
+    }
+
+    return 0;
+}
+```
+---
+54. **Write a program to take input in array and use a lambda function to filter even numbers (Delta IoT - John Deere, )**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[100], n;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    cout << "Enter array elements: ";
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    auto isEven = [](int num)
+    {
+        return num % 2 == 0;
+    };
+
+    cout << "Even numbers: ";
+
+    for (int i = 0; i < n; i++)
+    {
+        if (isEven(arr[i]))
+        {
+            cout << arr[i] << " ";
+        }
+    }
+
+    return 0;
+}
+```
+---
+55. **Write a C++ class that contains one integer member and one pointer member. Implement default constructor, copy constructor, assignment operator and destructor.**
+```cpp
+#include <iostream>
+using namespace std;
+
+class Test
+{
+private:
+    int num;
+    int* ptr;
+
+public:
+    // Default constructor
+    Test()
+    {
+        num = 0;
+        ptr = new int(0);
+    }
+
+    // Copy constructor (Deep Copy)
+    Test(const Test& obj)
+    {
+        num = obj.num;
+        ptr = new int(*obj.ptr);
+    }
+
+    // Assignment operator
+    Test& operator=(const Test& obj)
+    {
+        if (this != &obj)
+        {
+            num = obj.num;
+            *ptr = *obj.ptr;
+        }
+
+        return *this;
+    }
+
+    // Destructor
+    ~Test()
+    {
+        delete ptr;
+    }
+
+    void display()
+    {
+        cout << "Num: " << num
+             << ", Ptr: " << *ptr << endl;
+    }
+};
+
+int main()
+{
+    Test obj1;
+
+    Test obj2(obj1);  // Copy constructor
+
+    Test obj3;
+    obj3 = obj1;      // Assignment operator
+
+    obj1.display();
+    obj2.display();
+    obj3.display();
+
+    return 0;
+}
+```
+
+1. Why do we use return *this;?
+- this is a pointer to the current object.
+- *this represents the current object.
+- Returning *this by reference allows assignment operators to return the current object.
+2. When do we use void instead of return *this?
+- Use void when the function does not need to return any value.
+- Use ClassName& with return *this when implementing an assignment operator to support chaining.
+3. What is chaining assignment in C++?
+Assigning multiple objects in a single statement.
+obj3 = obj2 = obj1;
+
+
+Execution:
+1. obj2 = obj1 executes first.
+2. Assignment operator returns obj2 by reference.
+3. obj3 = obj2 executes next.
+
+---
+56. **Swap Two Numbers (Infinite, )**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 10, b = 20, temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
+}
+```
+Without using a third variable (using arithmetic):
+```
+a = a + b;
+b = a - b;
+a = a - b;
+```
+---
+
+57. **Sum of Digits (nCircle, )**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num = 12345;
+    int sum = 0;
+
+    while (num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    cout << "Sum of digits: " << sum;
+
+    return 0;
+}
+```
+---
+58. **Reverse a Linked List (GeeksforGeeks Problem)(nCircle, )**
+```cpp
+struct Node
+{
+    int data;
+    Node* next;
+};
+
+Node* reverseList(Node* head)
+{
+    Node* prev = nullptr;
+    Node* current = head;
+    Node* next = nullptr;
+
+    while (current != nullptr)
+    {
+        next = current->next;  // Store next node
+        current->next = prev;  // Reverse link
+        prev = current;        // Move prev forward
+        current = next;        // Move current forward
+    }
+
+    return prev;
+}
+```
+---
+59. **Operator Overloading Example(nCircle, )** already done
+---
+60. **const and Reference Example(nCircle, )** already done
+---
+61. **Pointers with const(nCircle, )**
+```cpp
+int x = 20;
+int c = 30;
+const int* a;     // pointer to const int (you cannot modify *a)
+int const* b;     // same as above
+int* const d = &x; // constant pointer (cannot change address stored)
+
+a = &x;   // OK
+//*a = 5; // ❌ Error: *a is const
+a = &c;   // OK
+
+*d = 25;  // OK: can change value through pointer
+//d = &c; // ❌ Error: d is a const pointer
+```
+---
+
+62. **Base and Derived Class Example (Tietoevry, )**
+(Constructor initialization + member initialization + output explanation)
+```cpp
+#include <iostream>
+using namespace std;
+
+class Base {
+    int id1;
+    int id2;
+public:
+    Base(int i, int j) : id2(j), id1(i) {
+        cout << "Base class\n";
+    }
+};
+
+class Derived : public Base {
+    int id3;
+    int id4;
+public:
+ //Derived(int a, int b, int c, int d) :  id3(c), id4(d + id3), Base(a, b) {
+    Derived(int a, int b, int c, int d) : Base(a, b), id3(c), id4(d + id3) {
+        cout << "Derived class\n";
+    }
+
+    void getVal() {
+        cout << id3 << " " << id4 << "\n";
+    }
+};
+
+int main() {
+    Derived d(10, 20, 30, 40);
+    d.getVal();
+    return 0;
+}
+```
+---
+63. **Explain the flow of constructor calls in inheritance Simple Runtime Polymorphism (Tietoevry, ) Example. (Demonstrates virtual, override, and const initialization)**
+```cpp
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    const int x;
+    A(int val) : x(val) {}
+
+    virtual void show() {
+        cout << "Class A" << endl;
+    }
+};
+
+class B : public A {
+public:
+    B(int val) : A(val) {}
+
+    void show() override {
+        cout << "Class B" << endl;
+    }
+};
+
+int main() {
+    A* obj = new B(10);
+    obj->show();   // Runtime polymorphism
+    delete obj;
+    return 0;
+}
+```
+----
+
+64. **Explain the use of const int in a class and how to initialize it. (Tietoevry, )**
+
+Ans.: A const int data member is used to store a value that cannot be modified after initialization.
+
+We must initialize it using the constructor initializer list.
+```cpp
+#include <iostream>
+using namespace std;
+
+class Test
+{
+    const int value;
+
+public:
+    Test(int v) : value(v)
+    {
+        cout << "Constructor called\n";
+    }
+
+    void display()
+    {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main()
+{
+    Test obj(100);
+    obj.display();
+
+    return 0;
+}
+```
+---
+65. **Write a simple runtime polymorphism code using base and derived classes.(Tietoevry, )**
+```cpp
+#include <iostream>
+using namespace std;
+
+class Base
+{
+public:
+    virtual void display()
+    {
+        cout << "Base class display()" << endl;
+    }
+};
+
+class Derived : public Base
+{
+public:
+    void display() override
+    {
+        cout << "Derived class display()" << endl;
+    }
+};
+
+int main()
+{
+    Base* ptr;
+    Derived obj;
+
+    ptr = &obj;
+
+    ptr->display();
+
+    return 0;
+}
+```
+66. **How do you initialize a constant data member inside a class?**
+```cpp
+#include <iostream>
+using namespace std;
+
+class Test
+{
+    const int value;
+
+public:
+    Test(int v) : value(v)
+    {
+    }
+
+    void display()
+    {
+        cout << value;
+    }
+};
+
+int main()
+{
+    Test obj(100);
+    obj.display();
+
+    return 0;
+}
+```
+---
+67. **Print the following pattern (n = 5): (Tech Mahindra, )**
+```
+    *
+   **
+  ***
+ ****
+*****
+```
+---
+68. **Replace zeros and sort the final array (Tech Mahindra)**
+Array 1: 1 2 3 0 0 0 Array 2: 2 5 6
+---
+69. **Write shared pointer class implementation (without using any library). Also explain: what is a shared pointer? (Hughes Systique (HSC), )**
+---
+70. **Write a class A having the following member variables:(Hughes Systique (HSC), )**
+static int x
+char* y
+std::string s
+const int p
+int& q
+solution :
+---
+71. **Why is int A::x = 0; initialized with zero?(Hughes Systique (HSC), )
+Also, write a method to display the static variable, and inside this method increment x++ and q++.
+Add one more method named add(). If we perform p++ inside the add method, what will happen?
+If we make the add method const, what changes?
+If we remove p++, will the code compile and work?**
+---
+72. **Write a C++ program demonstrating all major features of OOPS. (Acitivia,  )**
+73. **Smart pointers: write a program for all smart pointers.(Acitivia,  )**
+74. **Write a function pointer program that takes two integers and returns one float.(Acitivia,  )**
+75. **Write a C++ program to find the sum of both diagonals of a matrix. Take the matrix size dynamically as input from the user. (Prescient Technologies, )**
+
 
 
