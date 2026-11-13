@@ -787,7 +787,7 @@ int main()
 ```
 ---
 23. **Frequency of Each Character in a word (Expleo, )**
-
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -906,9 +906,12 @@ int main() {
 }
 ```
 output
+```
 A constructor
 B constructor
 A Destructor
+```
+---
 27. **What make you changes that B Destructor will call ? in 30 number q (Cyient, )**
 Answer: Make the base class destructor virtual.
 
@@ -1108,7 +1111,8 @@ int main() {
     return 0;
 }
 ```
-30. ** Reverse a string (Cyient, )**
+---
+30. **Reverse a string (Cyient, )**
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1470,6 +1474,7 @@ int main() {
     return 0;
 }
 ```
+---
 38. **Write output (Tietoevry, )**
 ```
 int arr[] = {10, 20, 30, 40, 50};
@@ -1478,8 +1483,9 @@ cout << *p;        // Output: 10
 cout << *p++;      // Output: 10 (p now points to arr[1])
 cout << (*p)++;    // Output: 20 (then arr[1] becomes 21)
 ```
-
-39. Write output & explain (Tietoevry, )
+---
+39. **Write output & explain (Tietoevry, )**
+```
 int x = 10, y = 20;
 const int* p1 = &x; // Pointer to const int (data is const, pointer not)
 int* const p2 = &x; // Constant pointer to int (pointer const, data not)
@@ -1489,9 +1495,10 @@ p1 = &y;     // OK: pointer itself can point elsewhere
 
 *p2 = 30;    // OK: data can be modified
 p2 = &y;     // Error: can't change address held by const pointer
-
-40. Insert pairs in map and print using iterator (Tietoevry, )
-
+```
+---
+40. **Insert pairs in map and print using iterator (Tietoevry, )**
+```cpp
 #include <iostream>
 #include <map>
 using namespace std;
@@ -1515,10 +1522,11 @@ int main() {
 
     return 0;
 }
-41. E**liminate duplicate characters from "Hello World!!!" without using STL (Calsoft Inc)
+```
+---
 
-
-
+41. **Eliminate duplicate characters from "Hello World!!!" without using STL (Calsoft Inc)**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1558,7 +1566,11 @@ int main() {
 
     return 0;
 }
-42 **First Non Repeating Character in a String (Apexon, )
+```
+---
+
+42. **First Non Repeating Character in a String (Apexon, )**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1584,8 +1596,10 @@ int main() {
     cout << "No non-repeating character found." << endl;
     return 0;
 }
-
+```
+----
 43 **First Repeating Character in a String (Apexon, )**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1606,8 +1620,10 @@ int main() {
     cout << "No repeating character found." << endl;
     return 0;
 }
+```
 ---
 44. **Write a C++ program to store integers 1–10 in a vector and remove element 5 from vector then print vector? (FlexTrade, )**
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -1639,12 +1655,13 @@ int main() {
 ---
 
 45 **Fix and Explain This Code (Akkodis, )**
- Original Code (Problematic):
+Original Code (Problematic):
 B obj;
 obj & =A obj;  //  Invalid syntax
 obj->sum(15,10);  //  obj is not a pointer
 
 Correct version
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1795,7 +1812,7 @@ int main() {
 }
 ```
 ---
-51. **To access a variable (g_i) defined in first.cpp from second.cpp, you need to declare it as extern in second.cpp. This tells the compiler that the variable is defined in another translation unit (another .cpp file), and the linker will resolve it during linking. (Cybage, )**
+49. **To access a variable (g_i) defined in first.cpp from second.cpp, you need to declare it as extern in second.cpp. This tells the compiler that the variable is defined in another translation unit (another .cpp file), and the linker will resolve it during linking. (Cybage, )**
 
 first.cpp
 Here, we define the global variable g_i.
@@ -1838,7 +1855,7 @@ Value of g_i: 100
 Updated value: 200
 ```
 ---
-52. **Tell me what output will come (WESEE, )**
+50. **Tell me what output will come (WESEE, )**
 
 ```cpp
 #include <iostream>
