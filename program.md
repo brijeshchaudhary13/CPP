@@ -721,81 +721,9 @@ int main() {
 }
 ```
 ----
+21. **Count Binary Substrings Starting and Ending with 1 (iQuest, )**
 
-
-25. Check Palindrome String (Iterative + Recursive) (iQuest, Apexon, Tech Mahindra)
-
-
-#include <iostream>
-#include <string>
-using namespace std;
-
-bool checkPalindrome(string str) {
-    int len = str.length();
-
-    int s = 0;
-    int e = len - 1;
-
-    while (s < e) {
-        if (str[s] != str[e]) {
-            return false;
-        }
-
-        s++;
-        e--;
-    }
-
-    return true;
-}
-
-int main() {
-    string str;
-    cin >> str;
-
-    if (checkPalindrome(str)) {
-        cout << "Palindrome";
-    } else {
-        cout << "Not Palindrome";
-    }
-
-    return 0;
-}
-
-
-
-#include <iostream>
-#include <string>
-using namespace std;
-
-bool checkPalindrome(string str, int s, int e) {
-
-    // Base condition
-    if (s >= e) {
-        return true;
-    }
-
-    // If characters don't match
-    if (str[s] != str[e]) {
-        return false;
-    }
-
-    // Recursive call
-    return checkPalindrome(str, s + 1, e - 1);
-}
-
-int main() {
-    string str;
-    cin >> str;
-
-    if (checkPalindrome(str, 0, str.length() - 1)) {
-        cout << "Palindrome";
-    } else {
-        cout << "Not Palindrome";
-    }
-
-    return 0;
-}
-26. Count Binary Substrings Starting and Ending with 1 (iQuest, )
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -819,9 +747,10 @@ int main()
 
     return 0;
 }
-
- Find the Most Frequently Occurring Character in a Word (Expleo, )
-
+```
+----
+22. **Find the Most Frequently Occurring Character in a Word (Expleo, )**
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -855,8 +784,9 @@ int main()
 
     return 0;
 }
-
-Frequency of Each Character in a word (Expleo, )
+```
+---
+23. **Frequency of Each Character in a word (Expleo, )**
 
 #include <iostream>
 #include <string>
@@ -895,12 +825,14 @@ int main()
 
     return 0;
 }
-char *str; vs char str[]; in C++ (IBM, )
-
-29. Program for Insertion (<<) Operator Overloading (IBM, )
+```
+----
+24. **char *str; vs char str[]; in C++ (IBM, )**
+---
+25. Program for Insertion (<<) Operator Overloading (IBM, )
 << = Insertion Operator: Used with cout to output data to the console.
 >> = Extraction Operator: Used with cin to input data from the user.
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -934,8 +866,9 @@ int main()
 
     return 0;
 }
-
-30. What will come output of following Program? (Cyient, )
+```
+26. **What will come output of following Program? (Cyient, )**
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -971,16 +904,15 @@ int main() {
 	return 0;
 
 }
+```
 output
 A constructor
 B constructor
 A Destructor
-31 What make you changes that B Destructor will call ? in 30 number q (Cyient, )
+27. **What make you changes that B Destructor will call ? in 30 number q (Cyient, )**
 Answer: Make the base class destructor virtual.
 
-Modified Code
-
-cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1020,15 +952,15 @@ int main()
 
     return 0;
 }
+```
 Correct Output
-
 A constructor
 B constructor
 B Destructor
 A Destructor
 
-
-32  Fix the bug (Cyient, )
+28. **Fix the bug (Cyient, )**
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1055,6 +987,7 @@ int main() {
 	
 
 }
+```
 ans:
 The bug is caused by object slicing in the function display(Base b).
 
@@ -1062,7 +995,7 @@ When a Derived object is passed by value, only the Base part is copied. Therefor
 
 Fixed code
 
-cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1091,12 +1024,14 @@ int main() {
 
     return 0;
 }
+```
 Output
 
 derived
 
 
-33.Fix the error (Cyient, )
+29. **Fix the error (Cyient, )**
+```cpp
 #include <bits/stdc++.h>
 #include<thread>
 using namespace std;
@@ -1116,7 +1051,9 @@ int main() {
 	
 
 }
+```
 solution
+```cpp
 #include <bits/stdc++.h>
 #include <thread>
 using namespace std;
@@ -1143,9 +1080,9 @@ int main() {
 
     return 0;
 }
-
+```
 Alternative solution using atomic
-
+```cpp
 #include <bits/stdc++.h>
 #include <thread>
 #include <atomic>
@@ -1170,8 +1107,9 @@ int main() {
 
     return 0;
 }
-
-34. Reverse a string (Cyient, )
+```
+30. ** Reverse a string (Cyient, )**
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 int counter=0;
@@ -1191,7 +1129,9 @@ int main() {
 	cout<<str<<"end";
 
 }
+```
 solution
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1215,9 +1155,10 @@ int main() {
 
     return 0;
 }
-
- reverse the order of words in a sentence or 35  WAP in C++ to Reverse a Line Word by Word (Zwayam, )
-
+```
+---
+ 31. **reverse the order of words in a sentence or 35  WAP in C++ to Reverse a Line Word by Word (Zwayam, )**
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1239,9 +1180,10 @@ int main() {
 
     return 0;
 }
+```
 
 or
-
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -1265,8 +1207,9 @@ int main() {
 
     return 0;
 }
-
-36 Program: Insert an Element into a Sorted Array (Siemens, )
+```
+---
+32. Program: Insert an Element into a Sorted Array (Siemens, )
 Problem: Given a sorted array, insert an element and maintain the sorted order.
 Input:
 int arr[] = {1, 3, 5, 7};
@@ -1275,7 +1218,7 @@ Output:
 1, 3, 5, 6, 7 
 
 
-
+```cpp
 #include <stdio.h>
 
 int main() {
@@ -1308,13 +1251,15 @@ int main() {
 
     return 0;
 }
-
-36. Pattern: (Intelizign, )
+```
+---
+33. **Pattern: (Intelizign, )**
+```
 1
 1 2
 1 2 3
-
-
+```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1330,8 +1275,10 @@ int main() {
 
     return 0;
 }
-
-37. Pointer behavior (Intelizign, )
+```
+----
+34. **Pointer behavior (Intelizign, )**
+```
 { 
 int* p1;
 int m = 100;
@@ -1341,8 +1288,9 @@ p1 = &m;
 printf("%d\n", *p1); // Undefined behavior
 printf("%d\n", m);   // 101
 }
-
+```
 But
+```
 {
 int m = 100;
 int* p1;
@@ -1352,9 +1300,11 @@ p1 = &m;
 printf("%d\n", *p1); //102
 printf("%d\n", m);   // 102
 }
+```
 
- 38. Call dosomething function in main() (Intelizign, )
+ 35. **Call dosomething function in main() (Intelizign, )**
     Case 1:
+```
     #include <iostream>
     using namespace std;
     
@@ -1368,9 +1318,9 @@ printf("%d\n", m);   // 102
         dosomething(ptr);    // pass pointer to function
         return 0;
     }
-    
+    ```
     case 2:
-    void dosomething(int &p) {
+``` void dosomething(int &p) {
         cout << "Inside function: " << p << endl;  // no dereferencing needed
     }
     
@@ -1378,9 +1328,9 @@ printf("%d\n", m);   // 102
         int P = 10;
         dosomething(P);  // pass variable by reference
     }
- 
-39 Create a class with const, reference, char pointer, static data member (Tietoevry, )
-
+ ```
+36. **Create a class with const, reference, char pointer, static data member (Tietoevry, )**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1426,10 +1376,10 @@ int main() {
 
     return 0;
 }
+```
 
-
-40 . Create all types of constructors + destructor. Why use them? (Tietoevry, )
-
+37. **Create all types of constructors + destructor. Why use them? (Tietoevry, )**
+```cpp
 #include <iostream>
 #include <utility>
 using namespace std;
@@ -1519,16 +1469,17 @@ int main() {
 
     return 0;
 }
-41. Write output (Tietoevry, )
+```
+38. **Write output (Tietoevry, )**
+```
 int arr[] = {10, 20, 30, 40, 50};
 int *p = arr;
-
 cout << *p;        // Output: 10
 cout << *p++;      // Output: 10 (p now points to arr[1])
 cout << (*p)++;    // Output: 20 (then arr[1] becomes 21)
+```
 
-
-42. Write output & explain (Tietoevry, )
+39. Write output & explain (Tietoevry, )
 int x = 10, y = 20;
 const int* p1 = &x; // Pointer to const int (data is const, pointer not)
 int* const p2 = &x; // Constant pointer to int (pointer const, data not)
@@ -1539,7 +1490,7 @@ p1 = &y;     // OK: pointer itself can point elsewhere
 *p2 = 30;    // OK: data can be modified
 p2 = &y;     // Error: can't change address held by const pointer
 
-43. Insert pairs in map and print using iterator (Tietoevry, )
+40. Insert pairs in map and print using iterator (Tietoevry, )
 
 #include <iostream>
 #include <map>
@@ -1564,7 +1515,7 @@ int main() {
 
     return 0;
 }
-44. Eliminate duplicate characters from "Hello World!!!" without using STL (Calsoft Inc)
+41. E**liminate duplicate characters from "Hello World!!!" without using STL (Calsoft Inc)
 
 
 
@@ -1607,7 +1558,7 @@ int main() {
 
     return 0;
 }
-45 First Non Repeating Character in a String (Apexon, )
+42 **First Non Repeating Character in a String (Apexon, )
 #include <iostream>
 using namespace std;
 
@@ -1634,7 +1585,7 @@ int main() {
     return 0;
 }
 
-46 First Repeating Character in a String (Apexon, )
+43 **First Repeating Character in a String (Apexon, )**
 #include <iostream>
 using namespace std;
 
@@ -1655,9 +1606,9 @@ int main() {
     cout << "No repeating character found." << endl;
     return 0;
 }
-
-46 Write a C++ program to store integers 1–10 in a vector and remove element 5 from vector then print vector? (FlexTrade, )
-
+---
+44. **Write a C++ program to store integers 1–10 in a vector and remove element 5 from vector then print vector? (FlexTrade, )**
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -1684,8 +1635,10 @@ int main() {
 
     return 0;
 }
+```
+---
 
-47 Fix and Explain This Code (Akkodis, )
+45 **Fix and Explain This Code (Akkodis, )**
  Original Code (Problematic):
 B obj;
 obj & =A obj;  //  Invalid syntax
@@ -1729,13 +1682,14 @@ int main() {
 
     return 0;
 }
-
-48 Replace Second Occurrence With "l.k" (Akkodis, )
+```
+---
+46. **Replace Second Occurrence With "l.k" (Akkodis, )**
 Input: apple
 Output: al.kle
 
 
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1768,11 +1722,11 @@ int main() {
 
     return 0;
 }
+```
+---
+47. **Write 3 functions: add, sub, multiply, each taking 2 parameters and returning an int. then task : Now call the functions using a loop (Cybage, )**
 
-
-49 Write 3 functions: add, sub, multiply, each taking 2 parameters and returning an int. then task : Now call the functions using a loop (Cybage, )
-
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1807,10 +1761,11 @@ int main() {
 
     return 0;
 }
-50 File Handling Example (write to file and read from file) (Cybage, )
+```
+---
+48. **File Handling Example (write to file and read from file) (Cybage, )**
 
-
-
+```cpp
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -1838,16 +1793,14 @@ int main() {
 
     return 0;
 }
-51.  To access a variable (g_i) defined in first.cpp from second.cpp, you need to declare it as extern in second.cpp. This tells the compiler that the variable is defined in another translation unit (another .cpp file), and the linker will resolve it during linking. (Cybage, )
-
-sol:
+```
+---
+51. **To access a variable (g_i) defined in first.cpp from second.cpp, you need to declare it as extern in second.cpp. This tells the compiler that the variable is defined in another translation unit (another .cpp file), and the linker will resolve it during linking. (Cybage, )**
 
 first.cpp
 Here, we define the global variable g_i.
 
-
-cpp
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1857,14 +1810,12 @@ int g_i = 100;
 void display() {
     cout << "Value from first.cpp: " << g_i << endl;
 }
+```
 
-
- second.cpp
+second.cpp
 Here, we declare the variable using extern to access the variable defined in first.cpp.
 
-
-cpp
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1881,13 +1832,15 @@ int main() {
 
     return 0;
 }
-
+```
+```
 Value of g_i: 100
 Updated value: 200
+```
+---
+52. **Tell me what output will come (WESEE, )**
 
-
-52. Tell me what output will come (WESEE, )
-
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1926,11 +1879,13 @@ int main() {
 
     return 0;
 }
+```
+Output
 
- Output
-
-
+```
 Dog barks
 Cat meows
+```
+---
 
 
