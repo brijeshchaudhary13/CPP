@@ -155,7 +155,7 @@ int main() {
 ```
 
 ---
-
+***Pass by Value vs Pass by Reference(iQuest, Intelizign, )***
 ### **1. Pass by Value**
 * A **copy** of the actual parameter is passed.
 * Changes made inside the function do **not affect** the original variable.
@@ -233,7 +233,7 @@ Here is your comparison in a neatly formatted table:
 
 
 ## Function Calling in C++
----
+***What is call by value and call by reference? (63 Moons, Infinite, Tech Mahindra )***
 
 ##  2. Call by Value
 
@@ -257,9 +257,6 @@ int main() {
     cout << a;
 }
 ```
-
-
-
 
 ---
 
