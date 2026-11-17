@@ -92,7 +92,7 @@ int main() {
 ---
 
 ## **Recursive Function Example**
-
+***What is Recursion? (Infinite,Tech Mahindra )***
 ```cpp
 #include <iostream>
 using namespace std;
@@ -111,6 +111,7 @@ int main() {
 ---
 
 ## **Inline Function**
+***What is Inline? (Infinite,Tech Mahindra )***
 
 Used for small, frequently-used functions. Hint to compiler to replace function call with function code.
 
