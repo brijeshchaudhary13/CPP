@@ -1,4 +1,5 @@
 ##  Operators in C++
+***What is Operator and its type in CPP? (IBM, )***
 
 Operators are symbols that perform operations on variables and values. C++ supports various types of operators:
 
