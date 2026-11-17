@@ -1,6 +1,7 @@
 # Memory Management in C and C++
 
 ## 1. Introduction to Memory Management
+***Memory Management ? (HCL, )***
 
 **Memory Management** is the process of allocating, using, tracking, and deallocating memory during program execution.
 
@@ -206,6 +207,7 @@ ptr = nullptr;
 # PART A: MEMORY MANAGEMENT IN C
 
 ## 4. Dynamic Memory Allocation in C
+***Explain Dynamic Memory Allocation with Example in c and cpp (XYZ, Larsen & Toubro)***
 
 C provides four important functions for dynamic memory allocation.
 
@@ -413,7 +415,7 @@ ptr = NULL;
 | Memory is uninitialized. | All allocated bytes are initialized to zero. |
 | `malloc(n * sizeof(int))` | `calloc(n, sizeof(int))` |
 
-## 6. Difference Between malloc() and new
+## 6. Difference Between malloc() and new (HCL, )
 
 | malloc() | new |
 |---|---|
@@ -424,11 +426,15 @@ ptr = NULL;
 | Requires free() for deallocation. | Requires delete for single-object deallocation. |
 | Does not initialize memory by default. | Can initialize objects. |
 
+## 7. delete vs free(). (HCL, )
+delete is a C++ operator that deallocates memory allocated using new and calls the object's destructor, whereas free() is a C library function that releases memory allocated using malloc(), calloc(), or realloc() without calling a destructor.
+
 ---
 
 # PART B: MEMORY MANAGEMENT IN C++
 
 ## 7. Dynamic Memory Allocation in C++
+***Explain Dynamic Memory Allocation with Example in c and cpp (XYZ, Larsen & Toubro)***
 
 C++ provides four primary operators:
 
@@ -564,6 +570,7 @@ int main()
 ## 9. Memory Management Problems
 
 ### 9.1 Memory Leak
+***What is memory leak in C++? (63 Moons, ), Memory Leak with Example & How to Prevent It (Zwayam, )***
 
 A memory leak occurs when dynamically allocated memory is no longer accessible for deallocation but remains allocated.
 
