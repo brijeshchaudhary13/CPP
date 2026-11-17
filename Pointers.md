@@ -1,3 +1,4 @@
+***Pointers & References ? (HCL,  Delta IoT - John Deere,  ), What is the use of pointers in C++? (63 Moons, )***
 ### **Pointers in C++**
 A **pointer** is a variable that **stores the memory address** of another variable. Instead of storing data directly, it stores the location of where data is kept in memory.
 
@@ -116,7 +117,7 @@ int* ptr;  // wild pointer
 * Always initialize pointers before using them.
 
 ---
-
+***Dangling Pointer with Example (Zwayam, Akkodis, )***
 ### 4. **Dangling Pointer**
 
 A pointer pointing to memory that has been **freed** or **goes out of scope**.
@@ -315,7 +316,42 @@ cout << *(int*)ptr;
 | Null Pointer          | `int* p = nullptr;` |
 
 ---
+***NULL vs nullptr (HCL)***
 
+| NULL                                         | nullptr                                       |
+| -------------------------------------------- | --------------------------------------------- |
+| Macro in C/C++.                              | Keyword introduced in C++11.                  |
+| Usually defined as `0`.                      | Represents a null pointer.                    |
+| Can cause ambiguity in function overloading. | Avoids ambiguity in function overloading.     |
+| Can be used as an integer constant.          | Cannot be implicitly converted to an integer. |
+
+**Example:**
+
+```
+#include <iostream>
+using namespace std;
+
+void display(int a)
+{
+    cout << "Integer function";
+}
+
+void display(int* ptr)
+{
+    cout << "Pointer function";
+}
+
+int main()
+{
+    // display(NULL);       // May cause ambiguity
+    display(nullptr);      // Calls pointer function
+
+    return 0;
+}
+```
+
+**Interview answer:** `NULL` is generally represented as `0`, whereas `nullptr` is a type-safe null pointer constant introduced in C++11. Prefer `nullptr` in modern C++.
+---
 ###  **1. What is the difference between `int* ptr;` and `int *ptr;`?**
 
 There is **no difference in functionality** — both declare a pointer to an `int`. It’s just a **stylistic choice**.
