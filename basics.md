@@ -1,5 +1,6 @@
 
 ## Introduction to C++
+***What is C++ (CPP)? (Siemens)***
 
 **C++** is a general-purpose, high-performance programming language developed by **Bjarne Stroustrup** as an extension of the **C language**.
 It supports **procedural**, **object-oriented**, and **generic** programming.
@@ -37,6 +38,8 @@ It supports **procedural**, **object-oriented**, and **generic** programming.
 ---
 
 ### Version-Wise Feature Table
+
+***Explain the major differences between C++98, C++11, C++14, C++17, and C++20. (FlexTrade, )***
 
 | C++ Version            | Release Year | Major Features                                                                                                                                                                                                                                                                                                                      |
 | ---------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -142,6 +145,8 @@ C++ is used in a wide range of domains due to its performance, flexibility, and 
 ---
 
 ### Comparison: C vs C++ vs Python vs Java
+
+***Difference in C & C++? (HCL, Infinite, )***
 
 | Feature / Language      | **C**                        | **C++**                                   | **Python**                        | **Java**                      |
 | ----------------------- | ---------------------------- | ----------------------------------------- | --------------------------------- | ----------------------------- |
