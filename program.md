@@ -2501,6 +2501,60 @@ If we remove p++, will the code compile and work?**
 73. **Smart pointers: write a program for all smart pointers.(Acitivia,  )**
 74. **Write a function pointer program that takes two integers and returns one float.(Acitivia,  )**
 75. **Write a C++ program to find the sum of both diagonals of a matrix. Take the matrix size dynamically as input from the user. (Prescient Technologies, )**
+76. **Question:**
+**Given a string str = "abafshdfhgaaaa":** (EdgeVerve Systems Infosys finale, first test coding, 2nd they give this program to solve and explain)
+1. Find all substrings of length 5 and print each substring with a mark/score of 10.
+2. Find all substrings of length 4 and print each substring with a mark/score of 5.
+**Write a C++ program to solve this problem.**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#include <string>
 
+
+bool isplaindrome(string str) {
+    int s = 0;
+    int e = str.size() - 1;
+
+    while (s < e) {
+        if (str[s] != str[e]) {
+            return false;
+        }
+        s++;
+        e--;
+    }
+
+    return true;
+}
+
+int score(string str) {
+    int cnt = 0, cnt1 = 0;
+    int n = str.size();
+
+    // Substrings of length 5
+    for (int i = 0; i + 5 <= n; i++) {
+        if (isplaindrome(str.substr(i, 5))) {
+            cnt++;
+        }
+    }
+
+    // Substrings of length 4
+    for (int i = 0; i + 4 <= n; i++) {
+        if (isplaindrome(str.substr(i, 4))) {
+            cnt1++;
+        }
+    }
+
+    return (cnt * 10) + (cnt1 * 5);
+}
+
+int main() {
+    string str = "abafshdfhgaaaa";
+
+    cout << "Total Score: " << score(str) << endl;
+
+    return 0;
+}
+```
 
 
