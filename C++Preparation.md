@@ -7300,6 +7300,24 @@ Total maximum risk differential:
 
 This is the optimal solution with **O(N²)** time complexity and **O(N)** auxiliary space.
 -------------------
+###EdgeVerve Systems Round 2 : 1 hr (Infosys finale)
+Q1. Tell me about yourself.
+
+Q2. Explain your current project in detail, including its architecture, modules, technologies, and overall workflow.
+
+Q3. What challenges or technical problems have you faced in your project, and how did you solve them?
+
+Q4. Coding Question – Palindrome Substrings and Marks Calculation
+
+Given a string str = "abafshdfhgaaaa":
+1. Find all substrings of length 5. Each palindrome substring gets 10 marks.
+2. Find all substrings of length 4. Each palindrome substring gets 5 marks.
+3. Calculate and return the total marks obtained from all palindrome substrings.
+Q5. Explain your daily work routine and responsibilities.
+
+Q6. How do you receive requirements in your project? Who assigns tasks, and how do you understand and implement those requirements?
+
+-----
 
 इंटरव्यू के अंत में जब इंटरव्यूअर आपसे पूछे, "Do you have any questions for us?" — तब आपके द्वारा पूछे गए सवाल आपकी curiosity, seriousness और कंपनी में genuine interest को दर्शाते हैं। नीचे कुछ बेहतरीन और **प्रभावशाली सवाल** दिए गए हैं जो आप इंटरव्यू के अंत में पूछ सकते हैं:
 
