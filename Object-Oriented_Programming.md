@@ -1,4 +1,8 @@
+
 ## **Object-Oriented Programming (OOP) in C++**
+
+### **What is OOPs? or OOP Pillars Explain ? (HCL, 63 Moons, IBM, Siemens, Apexon,  Larsen & Toubro, Intelizign, Akkodis, WESEE, Tech Mahindra,  )**
+
 Object-Oriented Programming (OOP) is a programming paradigm based on objects that encapsulate data and behavior. It allows for better code organization, reusability, and scalability.
 
 ### **Key Features of OOP:**
@@ -8,7 +12,7 @@ Object-Oriented Programming (OOP) is a programming paradigm based on objects tha
 - **Polymorphism** – Ability to take multiple forms (function and operator overloading).
 
 ---
-
+### **Difference between Class and Object (Siemens, )**
 ### **Class**
 A class is a blueprint for creating objects. It defines properties (data members) and behaviors (member functions).
 >"Class is user defined datatype"
@@ -41,7 +45,7 @@ int main() {
 }
 ```
 --- 
-
+### **Size of a Class in C++ (BMW, )**
 ### Size of Empty Class
 ```cpp
 #include <iostream>
@@ -221,7 +225,7 @@ Output
 8+8=16 bytes
 ```
 ---
-
+## **If a class has a virtual function, what is its size? (BMW, )**
 ### Code:
 
 ```cpp
@@ -285,7 +289,7 @@ Size of Cat: 8 bytes
 (If you run this on a 32-bit system, you might see `4 bytes` instead.)
 
 ---
-
+## **What is an access specifier in C++? (Infinite, )**
 ### **Access Modifiers in C++**
 Access modifiers in C++ control the visibility and accessibility of class members (variables and functions). They help in implementing **encapsulation** by restricting direct access to data.
 
@@ -584,6 +588,7 @@ Student Name: Alice
 ---
 
 ### **Structure vs Class**
+## **class vs structure in C++ (IBM, )**
 
 | Feature    | Description                                                                                                                                                            |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
