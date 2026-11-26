@@ -179,7 +179,7 @@ Here, even though b appears first in the initializer list, a is declared first â
  *Rule:* Always match the initializer list order with the declaration order.
 
 ---
-
+### **All Constructors & Destructors ? (HCL, Tech Mahindra)**
 ## Types of Constructors
 
 ### 1. **Default Constructor**
@@ -1517,6 +1517,28 @@ int main() {
 a = 10
 b = 20
 ```
+---
+-Can constructors be virtual? (nCircle, )
+-Why we have virtual destructor but not virtual constructor in cpp (Tech Mahindra, )
+-Why virtual destructor is required(Tech Mahindra, )
+-Why Can we not overload destructor in cpp(Tech Mahindra, )
+-Why destructor has no parameters(Tech Mahindra, )
+-What are the cpp scenario when copy constructor is called(Tech Mahindra, )
+-What happen when we don't use & in copy constructor(Tech Mahindra, )
+-When is the copy constructor called?(Tech Mahindra, )
+-What is Upcasting and Downcasting? (Tech Mahindra, )
+-What is Virtual Inheritance? (Tech Mahindra, )
+-Move Constructor, Default Constructor, Default Destructor (Intelizign, )
+-What is a copy constructor? Why define it manually in C++?, write example. (63 Moons,  WESEE,)
+-Deep copy & Shallow Copy ? (HCL, Zwayam, Delta IoT - John Deere , nCircle )
+-Combined program showing shallow copy vs deep copy (Delta IoT - John Deere, )
+-What is an abstract class in C++? (63 Moons, )
+-How to achieve abstraction in C++ (Delta IoT - John Deere, )
+-Abstraction vs Interface (in C++) also write code.(Delta IoT - John Deere, )
+-abstraction class, interface class (Siemens)
+-Can we make an instance of abstract class? (FlexTrade, )
+-What is an abstract class in C++? Give an example. (FlexTrade, )
+-If we do not create a constructor, how is it handled in C++? (Tietoevry, )
 
 ---
 ###  **Difference Between Abstraction and Encapsulation:**
