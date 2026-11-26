@@ -237,6 +237,175 @@ int main() {
 }
 ```
 ---
+### **Describe static and const variables in C++. (63 Moons, )**
+
+In C++, `static`**&#x20;and&#x20;**`const` are keywords used to control the lifetime, scope, and modification of variables.
+
+## **1. Static Variables**
+
+The `static` keyword preserves a variable's value throughout the program or shares a class member among all objects.
+
+There are three common uses:
+
+### **A. Static Local Variable**
+
+- Created only once.
+- Retains its value between function calls.
+- Default value is `0` if not initialized.
+
+```
+#include <iostream>
+using namespace std;
+
+void show()
+{
+    static int count = 0;
+    count++;
+
+    cout << count << endl;
+}
+
+int main()
+{
+    show();  // 1
+    show();  // 2
+    show();  // 3
+
+    return 0;
+}
+```
+
+**Without static:** `count` would be initialized to 0 on every function call.
+
+### **B. Static Global Variable**
+
+- Declared outside a function.
+- Accessible only within the same source file (internal linkage).
+
+```
+static int count = 10;
+
+int main()
+{
+    cout << count;  // 10
+}
+```
+
+### **C. Static Class Variable**
+
+- Shared by all objects of a class.
+- Only one copy exists.
+- Can be accessed using the class name.
+
+```
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+public:
+    static int count;
+};
+
+int Employee::count = 0;
+
+int main()
+{
+    Employee e1, e2;
+
+    Employee::count++;
+
+    cout << e1.count;  // 1
+    cout << e2.count;  // 1
+}
+```
+
+## **2. Const Variables**
+
+The `const` keyword makes a variable read-only after initialization.
+
+- Must be initialized when declared.
+- Cannot be modified after initialization.
+
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int x = 10;
+
+    cout << x;
+
+    // x = 20;  // Error
+
+    return 0;
+}
+```
+
+### **Const with Pointer**
+
+There are three important cases:
+
+**A. Pointer to Constant**
+
+```
+const int* ptr = &x;
+
+// *ptr = 20;  // Error
+// ptr = &y;   // Allowed
+```
+
+**B. Constant Pointer**
+
+```
+int* const ptr = &x;
+
+// *ptr = 20;  // Allowed
+// ptr = &y;   // Error
+```
+
+**C. Constant Pointer to Constant**
+
+```
+const int* const ptr = &x;
+
+// *ptr = 20;  // Error
+// ptr = &y;   // Error
+```
+
+## **3. Difference Between Static and Const**
+
+| Feature            | Static                                       | Const                                 |
+| ------------------ | -------------------------------------------- | ------------------------------------- |
+| Purpose            | Controls lifetime and linkage/sharing        | Prevents modification                 |
+| Value modification | Allowed                                      | Not allowed after initialization      |
+| Initialization     | Not always required                          | Required for ordinary const variables |
+| Lifetime           | Depends on context; static storage duration  | Depends on declaration                |
+| Class member       | Shared among objects                         | Read-only member                      |
+| Memory             | Static storage duration for static variables | Depends on storage duration           |
+
+## **4. Static Const Together**
+
+You can use both keywords together.
+
+```
+class Test
+{
+public:
+    static const int MAX = 100;
+};
+```
+
+- `static`: One shared class variable.
+- `const`: Its value cannot be modified.
+
+
+**Remember:**
+
+- `static` = Lifetime / sharing / linkage (depending on context).
+- `const` = Cannot modify the variable through that name.
+---
 ### ASCII Code
 * **ASCII (American Standard Code for Information Interchange)** assigns a numeric value (0–127) to each character.
 * It includes:
