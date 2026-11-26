@@ -276,6 +276,8 @@ hello.cpp
 
 ---
 
+### Difference between static and dynamic linking (nCircle, )
+
 #1. What is a Library?
 
 A **library** is a collection of compiled code (functions, classes, resources) that can be reused by multiple programs.
