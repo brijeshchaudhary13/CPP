@@ -1048,6 +1048,29 @@ int x;
 int *p = &x;
 scanf("%d", p);
 ```
+----
+Pointers & References ? (HCL,  Delta IoT - John Deere,  )
+Pointer vs Object(FlexTrade, )
+Why not use object instead of pointer? (FlexTrade, )
+Dangling Pointer with Example (Zwayam, Akkodis, )
+What is the use of pointers in C++? (63 Moons, )
+What is call by value and call by reference? (63 Moons, Infinite, Tech Mahindra )
+Pass by Value vs Pass by Reference(iQuest, Intelizign, )
+What is a namespace in C++? (63 Moons, )
+NULL and nullptr ? (HCL, )
+
+Memory Management ? (HCL, )
+How to Delete Memory in C++  (Akkodis, )
+What is memory leak in C++? (63 Moons, )
+Memory Leak with Example & How to Prevent It (Zwayam, )
+How to convert stacks into a heap? (63 Moons, )
+Explain Dynamic Memory Allocation with Example in c and cpp (XYZ, Larsen & Toubro)
+new vs malloc(). (HCL, )
+delete vs free(). (HCL, )
+Smart Pointers ? their use cases (HCL, Akkodis,  Delta IoT - John Deere, nCircle)
+What is shared_ptr? (Intelizign, )
+RAII ? (HCL, )
+
 
 ---
 [⬅️ Functions](/functions.md)    |    [Refrence](/refrence.md)    | [Smart Pointers ➡️](/smartPointers.md) 
