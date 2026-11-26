@@ -404,6 +404,25 @@ int main() {
 
 ---
 
+Explain function overriding and write a program and explain code. (HCL, Hughes Systique (HSC))
+What is polymorphism? with type (Prescient Technologies, )
+Explain runtime polymorphism in C++. (Delta IoT - John Deere, Hughes Systique (HSC))
+What is encapsulation  (Infinite, )
+Explain method overloading vs overriding. (63 Moons, Apexon, Akkodis, )
+Polymorphism types and implementations(nCircle)
+Virtual Functions & Virtual Keyword ? (HCL, Larsen & Toubro,  )
+What is a Virtual Constructor? (Cyient, )
+What is Virtual Function, Explain how virtual functions work internally. Why use virtual functions? (FlexTrade, Larsen & Toubro,  )
+What is a pure virtual function? Why do we use them? (FlexTrade, Delta IoT - John Deere)
+What happens if we remove the virtual keyword from a pure virtual function (Delta IoT - John Deere, )
+What is VPtr and VTable? and when it created?(Tietoevry, Hughes Systique (HSC))
+Constructor and Vtables (BMW, )
+We use virtual to enable runtime polymorphism, also called dynamic binding.
+Without virtual, compile-time (static) binding happens. (HCL, )
+What is the use of the override keyword in C++? (Tietoevry, )
+What is the purpose of the final keyword in C++? (Tietoevry, )
+What are the advantages of using the override keyword? (Tietoevry, )
+
 ---
 [⬅️ Inheritance](/Inheritance.md)        |        [Virtual Functions ➡️](/virtualFunctions.md)
 ---
