@@ -406,6 +406,145 @@ public:
 - `static` = Lifetime / sharing / linkage (depending on context).
 - `const` = Cannot modify the variable through that name.
 ---
+### **What are storage classes in C++ and their types? (63 Moons, )**
+## **Storage Classes in C++**
+
+A **storage class** in C++ defines the scope, lifetime, visibility and storage duration of a variable or function.
+
+C++ commonly uses these storage-class specifiers:
+
+1. `auto`
+2. `register` (deprecated in C++11 and removed in C++17)
+3. `static`
+4. `extern`
+5. `mutable`
+6. `thread_local` (C++11)
+
+## **1. auto**
+
+- Local variable.
+- Automatically created when the block executes.
+- Destroyed when the block ends.
+- In modern C++, `auto` is mainly used for type deduction.
+
+```
+int main()
+{
+    auto x = 10;    // int
+    auto y = 10.5;  // double
+}
+```
+
+## **2. register**
+
+- Historically suggested storing variables in CPU registers.
+- Cannot take its address in older C++ standards.
+- Deprecated in C++11 and removed as a storage-class specifier in C++17.
+
+```
+int main()
+{
+    register int x = 10;
+}
+```
+
+## **3. static**
+
+- Retains its value throughout the program.
+- Static local variables are initialized only once.
+- Static class variables are shared among all objects.
+
+```
+void show()
+{
+    static int x = 0;
+    x++;
+
+    cout << x << endl;
+}
+
+int main()
+{
+    show(); // 1
+    show(); // 2
+    show(); // 3
+}
+```
+
+## **4. extern**
+
+- Declares a global variable defined in another location.
+- Used to share global variables between multiple source files.
+
+**File1.cpp**
+
+```
+int count = 100;
+```
+
+**File2.cpp**
+
+```
+#include <iostream>
+using namespace std;
+
+extern int count;
+
+int main()
+{
+    cout << count;  // 100
+}
+```
+
+## **5. mutable**
+
+- Used with class data members.
+- Allows modification of a member even inside a `const` member function.
+
+```
+class Test
+{
+public:
+    mutable int count = 0;
+
+    void show() const
+    {
+        count++;
+    }
+};
+```
+
+## **6. thread_local (C++11)**
+
+- Each thread gets its own copy of the variable.
+- Variable remains alive for the lifetime of its thread.
+
+```
+#include <iostream>
+using namespace std;
+
+thread_local int count = 0;
+
+int main()
+{
+    count++;
+    cout << count; // 1
+}
+```
+
+## **Comparison Table**
+
+| Storage class | Scope / usage                   | Lifetime                                 |
+| ------------- | ------------------------------- | ---------------------------------------- |
+| auto          | Local block                     | Block execution                          |
+| register      | Historical local variable       | Block execution                          |
+| static        | Local, global or class          | Entire program (static storage duration) |
+| extern        | Shared declaration across files | Depends on defined object                |
+| mutable       | Class data member               | Same as containing object                |
+| thread_local  | Per-thread variable             | Thread lifetime                          |
+
+**Interview tip:** Don't confuse storage class with storage duration. For example, `static` is a storage-class specifier, while static storage duration describes how long an object exists.
+---
 ### ASCII Code
 * **ASCII (American Standard Code for Information Interchange)** assigns a numeric value (0–127) to each character.
 * It includes:
